@@ -1,0 +1,146 @@
+# Build outputs
+result
+result-*
+
+# ROM images and firmware binaries
+*.img
+update.img
+boot0.bin
+boot1.bin
+system.img
+userdata.img
+recovery.img
+
+# Extracted firmware directories (but allow analysis reports)
+firmware/*
+!firmware/*.md
+!firmware/README.md
+
+# Extracted firmware
+extractions/
+extracted/
+*_extracted/
+
+# U-Boot build artifacts
+u-boot/
+u-boot-sunxi-with-spl.bin
+u-boot.bin
+u-boot.dtb
+u-boot-spl.bin
+sunxi-spl.bin
+SPL
+
+# Kernel build artifacts
+linux/
+linux-*/
+*.tar.xz
+arch/*/boot/
+vmlinux
+System.map
+Module.symvers
+modules.builtin
+modules.order
+*.ko
+*.o
+*.cmd
+*.orig
+*.mod
+.tmp_versions/
+
+# Cross-compilation artifacts
+*.a
+*.so
+*.elf
+
+# Backup files
+backup_*.img
+emmc_backup.img
+nand_backup.img
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# direnv
+.direnv/*
+
+# Log files
+*.log
+serial_output.txt
+
+# Test scripts (unless part of testing framework)
+test_*.sh
+quick_test.py
+
+# Device-specific generated files (allow main deliverables)
+!sun50i-h713-hy300.dts  # Allow main device tree deliverable
+!configs/*.defconfig     # Allow U-Boot defconfig files
+!configs/*.txt          # Allow boot scripts
+!configs/*.sh           # Allow build scripts
+
+# Analysis output
+binwalk_output/
+strings_output.txt
+hexdump_output.txt
+# Build artifacts and temporary files
+*.o.d
+*.patch
+*.backup
+*.modified
+*.original
+*.pre-*
+*enhance_tvtop_interface.sh
+*helper_functions.c
+*task019_reset_line_control.patch
+*tv-capture-clock-patch.patch
+*tv_capture_clock_management.patch
+*tvcap-clock-patch.patch
+*tvtop_register_enhancement.patch
+*tvtop_register_interface.patch
+
+# Binary files - Phase VIII
+*.qcow2
+*.dtb
+test-*
+**/build/
+**/__pycache__/
+tools/accelerometer_detection
+sunxi-fel
+test-h713-fel.sh
+sunxi-fel-h713
+sunxi-tools-source/
+
+# FEL backups (local testing only)
+fel_backup*/
+fel_quick*/
+firmware_backup_*/
+
+# Sunxi-tools source (use upstream with patch)
+sunxi-tools-source/
+
+# PhoenixSuit binaries and tools
+ps/
+*.zip
+sunxi-fel-h713*
+fel-h713
+run-fel-h713
+license.jwt
+
+# U-Boot binaries
+*.bin
+spl-only.bin
+u-boot-sunxi-with-spl*.bin
+
+# udev rules (system-specific)
+90-sunxi-fel.rules
