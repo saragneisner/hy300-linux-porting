@@ -1,0 +1,15 @@
+# Build artifacts (exclude from git)
+*.bin
+*.img
+*.dtb
+*.elf
+*.o
+*.a
+*.so
+*.ko
+*.cmd
+*.d
+*.tmp
+*.swp
+*.log
+.cache/

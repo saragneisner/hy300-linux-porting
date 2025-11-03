@@ -1,0 +1,6 @@
+# Device backups (large files, external storage)
+*.img
+*.bin
+*.gz
+*.tar
+*.zip

@@ -1,0 +1,6 @@
+# Execution logs
+*.log
+*.txt
+*.out
+extraction-*/
+phase*/
