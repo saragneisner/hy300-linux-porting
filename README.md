@@ -1,9 +1,9 @@
 # HY300 Linux Porting - Complete Rebuild Plan
 
-**Status:** ✅ Phase I COMPLETE (9/9 tasks) → Phase 1.5 (sunxi-tools) starting  
+**Status:** ✅ Phase I COMPLETE (9/9 tasks) → Awaiting CP2102 for Phase II  
 **Start Date:** November 3, 2025  
-**Current Phase:** Phase 1.5 - sunxi-tools Implementation (🔄 Awaiting CP2102)  
-**Hardware Access:** ✅ Root access available, 🔄 UART/FEL access upcoming  
+**Current Phase:** Phase I complete; Phase II starts when CP2102 arrives  
+**Hardware Access:** ✅ Root access available, 🔄 UART access pending CP2102  
 **End Goal:** 🛡️ Privacy-Focused Armbian Custom ROM
 
 ## 🎯 Project Mission
@@ -139,33 +139,31 @@ hy300-linux-porting/         # NEW ROOT
 5. ✅ Document boot process via kernel logs
 6. ✅ **Privacy audit:** Identify all spyware/telemetry components
 7. ✅ Device Tree analysis (sun50i-h713-hy300.dtb)
-8. ✅ Recovery capability documentation (UART FEL mode)
-9. ✅ Phase I comprehensive summary
+8. ✅ **Network Configuration Baseline** (IP, DNS, firewall baseline)
+9. ✅ Phase I comprehensive summary + Research validation
 
-**Result:** ✅ GATE PASSED → Ready for Phase 1.5
+**Result:** ✅ GATE PASSED → Proceed to Phase II when CP2102 arrives
 
 ---
 
-### Phase 1.5: sunxi-tools Implementation ⏳ **NEXT**
+### Optional Phase 1b: sunxi-tools Implementation (if CP2102 delayed)
 **Goal:** Build and configure sunxi-tools for FEL mode recovery  
-**Duration:** 2-3 days (starting soon)  
-**Prerequisites:** Phase I complete (✅), CP2102 available (🔄)  
-**Safety Level:** 🟢 LOW RISK (testing only, no hardware writes yet)
+**Duration:** 2-3 days (only if waiting for CP2102)  
+**Prerequisites:** Phase I complete (✅)  
+**Safety Level:** 🟢 LOW RISK (development environment only, no device access needed yet)
 
 **Key Tasks:**
 1. Build sunxi-tools from source for H713 support
-2. Test FEL mode detection with connected device
-3. Verify device enters FEL mode via USB
-4. Create FEL boot scripts and recovery procedures
-5. Test safe SRAM loading without eMMC modification
-6. Document recovery workflow for all phases ahead
+2. Prepare FEL mode detection and recovery scripts
+3. Create SRAM loading procedures documentation
+4. Prepare recovery workflow for Phase II
 
-**Dependencies:** Awaiting CP2102 UART adapter (in transit)  
-**Outputs:** FEL tools ready for Phase II bootloader testing
+**Note:** Only execute if CP2102 UART adapter is delayed. Can be skipped if adapter arrives today.  
+**Status:** ⏳ ON STANDBY - will execute as Phase 1b if needed
 
 ---
 
-### Phase II: UART Access & Boot Analysis ⏳ **BLOCKED**
+### Phase II: UART Access & Boot Analysis ⏳ **BLOCKED (Awaiting CP2102)**
 **Goal:** Establish serial console access and bootloader inspection  
 **Duration:** 1-2 days  
 **Prerequisites:** UART hardware connection (🔄 Upcoming)  
@@ -281,15 +279,18 @@ hy300-linux-porting/         # NEW ROOT
 - [x] Boot process fully documented
 - [x] Hardware component inventory complete
 - [x] **Spyware/telemetry audit** complete (10+ threats identified)
+- [x] **Network configuration baseline** documented
 - [x] All 9 Phase I tasks completed and validated
 
-### Phase 1.5 Completion Criteria (sunxi-tools) ⏳ **IN PROGRESS**
+### Optional Phase 1b: sunxi-tools Criteria (if CP2102 delayed) ⏳
 - [ ] sunxi-tools built for H713 (FEL mode support)
-- [ ] FEL mode device detection working
-- [ ] Safe SRAM loading procedures documented
-- [ ] FEL recovery workflow tested
-- [ ] Recovery procedures validated with Device B
-- [ ] Ready for Phase II UART bootloader testing
+- [ ] FEL recovery procedures documented
+
+### Phase II Criteria (Awaiting CP2102) ⏳
+- [ ] UART connection established and tested
+- [ ] U-Boot bootloader dumped and analyzed
+- [ ] Boot security documented
+- [ ] Recovery procedures validated
 
 ### Project Completion Criteria
 - [ ] **Privacy-focused Armbian ROM** boots reliably
