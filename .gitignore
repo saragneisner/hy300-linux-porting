@@ -1,0 +1,40 @@
+# Build artifacts and temporary files
+build/
+tmp_random_findings/
+backup/dumps/
+
+# Large binary files
+*.fex
+*.img
+*.bin
+*.xz
+*.cpio
+*.apk
+
+# System files
+.DS_Store
+.thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Node
+node_modules/
+.npm
+
+# Nix
+result
+result-*
+.envrc
