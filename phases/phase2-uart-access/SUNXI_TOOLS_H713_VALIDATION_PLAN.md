@@ -599,6 +599,110 @@ rebuild/hardware-access/
 
 ---
 
+## Abort & Recover
+
+**CRITICAL:** If something fails during this phase, follow these steps immediately.
+
+### Failure Scenario: UART Connection Unstable
+
+**Symptoms:** Garbled characters, frequent disconnects, no output  
+**Recovery Time:** < 10 minutes
+
+**Steps:**
+```bash
+# Verify baud rate (must be 115200)
+minicom -D /dev/ttyUSB0 -b 115200
+# Press Ctrl+A, O for settings
+
+# Check signal integrity with multimeter:
+# VDD: Should read 5.0V ±0.2V
+# GND: Should show 0V
+
+# Inspect cable: No bent connectors, clean contacts
+# Try swapping RX/TX if no output
+
+# Retry connection
+sudo killall minicom 2>/dev/null
+sleep 1
+minicom -D /dev/ttyUSB0 -b 115200
+```
+
+### Failure Scenario: U-Boot SRAM Load Failed
+
+**Symptoms:** sunxi-fel times out, device not detected  
+**Recovery Time:** 5-15 minutes
+
+**Steps:**
+```bash
+# Force BROM mode
+# 1. Power OFF device completely
+# 2. Hold recovery button
+# 3. Apply power while holding button
+# 4. Wait 1 second, release button
+
+# Verify BROM enumeration
+lsusb -v -d 1f3a:efe8
+
+# Check sunxi-fel H713 support
+/path/to/sunxi-fel -l
+
+# Attempt load with verbose output
+/path/to/sunxi-fel -v \
+  --spl u-boot-with-spl.bin \
+  --spl-addr 0x20000000
+
+# If fails (known H713 BROM bug), use UART manual loading:
+minicom -D /dev/ttyUSB0 -b 115200
+# Send binary via xmodem (Ctrl+A, S in minicom)
+```
+
+### Failure Scenario: Bootloader Test Damaged Android
+
+**Symptoms:** Device hangs at boot, won't reach Android  
+**Recovery Time:** 30-60 minutes via UART
+
+**Steps:**
+```bash
+# Access UART bootloader
+minicom -D /dev/ttyUSB0 -b 115200
+=> # Should see prompt
+
+# Restore from backup
+=> load mmc 0 0x40000000 /boot/android-kernel.bin
+=> bootz 0x40000000
+
+# If that fails: Use factory backup
+=> load mmc 0 0x40000000 factory-backup.bin
+=> mmc write 0x40000000 0x0 0x2000
+
+=> reset  # Reboot
+```
+
+**CRITICAL: SRAM testing should not damage anything!**  
+If Android won't boot after SRAM-only testing: Report as bug, check for accidental flashing.
+
+### Emergency Device Brick Recovery
+
+**If device completely unbootable:**
+
+```bash
+# Force BROM mode (may require physical reset)
+# Power OFF, remove battery if possible
+# Hold recovery button during power-on
+# Device should enumerate in BROM mode
+
+# Restore via sunxi-fel
+lsusb -d 1f3a:efe8  # Verify BROM mode
+/path/to/sunxi-fel write 0x00000000 factory-bootloader-backup.bin
+
+# Reboot
+# Device should boot Android normally
+```
+
+**For detailed recovery procedures:** See `phases/RECOVERY_TEMPLATE.md`
+
+---
+
 ## Community Contribution Plan
 
 After validation complete:

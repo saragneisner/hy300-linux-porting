@@ -1,0 +1,16 @@
+key 79    HOME
+key 132   DPAD_UP
+key 187   DPAD_LEFT
+key 142   DPAD_RIGHT
+key 141   DPAD_DOWN
+key 178   DPAD_CENTER
+key 91    VOLUME_MUTE
+key 181   VOLUME_DOWN
+key 137   VOLUME_UP
+key 135   POWER
+key 139   BACK
+key 245   PRJ_SOURCE #–≈∫≈‘¥
+key 138   MENU
+key 220   PRJ_FOCUS_UP
+key 69    PRJ_FOCUS_DN
+key 102   PRJ_BRC_PAIR

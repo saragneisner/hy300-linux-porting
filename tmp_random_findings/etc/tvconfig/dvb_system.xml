@@ -1,0 +1,33 @@
+<!--
+	system module init param config for DVB-C/T/T2 & ATV
+-->
+<AllData BigEnd="1" BuildName="1" Comment="">
+	<Tuner>
+		<EXTERNAL_DemodType Val="402" />
+		<!-- 0 means TSStream, 9 means DRX_SX6, 402 mean external demod_atbm783x -->
+		<EXTERNAL_RFType RFTypeCnt="1" Val1="34"/> <!-- 0 means NULL, 34 means ATBM253 -->
+		<EXTERNAL_RFI2cAddr RFI2CCnt="1" Val1="0xC0"/> <!-- ATBM253&SI2151 is 0xC0, R842 is 0xF6 -->
+		<EXTERNAL_SerialTS Val="0" />		<!-- 0 means Parallel, 1 means Serial -->
+		<EXTERNAL_TSOutput Val="3" />	<!-- 0:Serial_TS, 1: Serial_Demod , 2: Serial_TS1,  3: Parallel_Demod , 4:Parallel_TS1, 5:Parallel_TS2  -->
+		<EXTERNAL_CIPath Val="0" />	<!-- 0:CI_ByPass, 1:CI_Out_TS1, 2:CI_Out_TS2 -->
+		<EXTERNAL_ClockReverse Val="1" />	<!-- 0:falling clock edge trigger, 1:raising clock edge trigger -->
+
+		<BUILDIN_DemodType Val="9" />
+		<!-- 0 means TSStream, 9 means DRX_SX6 -->
+		<BUILDIN_RFType RFTypeCnt="3" Val1="34" Val2="35" Val3="36" />
+		<!-- 0 means NULL, 34 means ATBM253, 35 means SI2151(0xC0), 36 means R842(0xF6) -->
+		<BUILDIN_RFI2cAddr RFI2CCnt="3" Val1="0xC0" Val2="0xC0" Val3="0xF6"/> <!-- ATBM253&SI2151 is 0xC0, R842 is 0xF6 -->
+		<BUILDIN_SerialTS Val="0" />		<!-- 0 means Parallel, 1 means Serial -->
+		<BUILDIN_TSOutput Val="3" />	<!-- 0:Serial_TS, 1: Serial_Demod , 2: Serial_TS1,  3: Parallel_Demod , 4:Parallel_TS1, 5:Parallel_TS2  -->
+		<BUILDIN_CIPath Val="0" />	<!-- 0:CI_ByPass, 1:CI_Out_TS1, 2:CI_Out_TS2 -->
+		<BUILDIN_ClockReverse Val="1" />	<!-- 0:falling clock edge trigger, 1:raising clock edge trigger -->
+
+		<DAgc2AmpRef0 Val="0x0440"/> <!-- ATBM253 debug for IF signal value; 0x0440:DTMB\ISDB\ATSC\DVBT; 0x0480:DVBC; 0x04E0: ATV -->
+	</Tuner>
+	<Debug>
+		<InternalTest Val="0" />	<!-- 0: Do not support internal test; 1: Support internal test -->
+	</Debug>
+	<Revision>
+		<VersionNo Val="fusion DVB" />
+	</Revision>
+</AllData>

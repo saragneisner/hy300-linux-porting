@@ -1,0 +1,16 @@
+Filesystem            Size  Used Avail Use% Mounted on
+tmpfs                 467M  848K  467M   1% /dev
+tmpfs                 467M     0  467M   0% /mnt
+/dev/block/mmcblk0p19  11M  128K   11M   2% /metadata
+/dev/block/dm-0       920M  918M  2.7M 100% /
+/dev/block/dm-1       107M  107M  340K 100% /vendor
+/dev/block/dm-2       505M  503M  1.5M 100% /product
+/dev/block/mmcblk0p24  16M  3.5K   16M   1% /Reserve0
+magisk                467M  1.8M  466M   1% /debug_ramdisk
+/dev/block/mmcblk0p23 127M  2.7M  125M   3% /oem
+tmpfs                 467M     0  467M   0% /apex
+tmpfs                 467M  248K  467M   1% /linkerconfig
+/dev/block/mmcblk0p26 4.6G  787M  3.8G  17% /data
+tmpfs                 467M     0  467M   0% /data_mirror
+magisk                467M     0  467M   0% /vendor/xbin
+/dev/fuse             4.6G  787M  3.8G  17% /mnt/user/0/emulated

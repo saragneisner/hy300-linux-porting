@@ -1,0 +1,11 @@
+service tvserver /vendor/bin/hw/tvserver
+    interface vendor.aw.homlet.tvsystem.tvserver@1.0::ITvServer default
+    class early_hal
+    user root
+    group root system everybody
+
+on post-fs-data
+    mkdir /data/vendor/tvconfig 0771 system system
+
+on property:vendor.source.aspectratio=*
+    setprop sys.source.aspectratio ${vendor.source.aspectratio}

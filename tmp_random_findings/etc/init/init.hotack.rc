@@ -1,0 +1,22 @@
+on late-fs
+	chmod 777 /vendor/zeasn/
+	chmod 777 /vendor/zeasn/
+	chmod 777 /sys/devices/platform/soc@2900000/soc@2900000:leds@0/leds
+
+on post-fs
+	chmod 0777 /vendor/zeasn/
+	chmod 0777 /vendor/zeasn/
+	chmod 0777 /sys/devices/platform/soc@2900000/soc@2900000:leds@0/leds
+
+on init
+	chown system system /vendor/zeasn/
+	chmod 0777 /vendor/zeasn/
+	chmod 0777 /vendor/zeasn
+	chmod 0777 /sys/devices/platform/soc@2900000/soc@2900000:leds@0/leds
+	
+on property:sys.boot_completed=1
+	start preeshare
+	chown system system /vendor/zeasn/
+	chmod 0777 /vendor/zeasn/
+	chmod 0777 /vendor/zeasn
+	chmod 0777 /sys/devices/platform/soc@2900000/soc@2900000:leds@0/leds

@@ -1,0 +1,8 @@
+# start isomountservice  service
+service isomountservice  /system/bin/isomountservice
+    class main
+    user root
+    seclabel u:r:isomountservice:s0
+    group root reserved_disk everybody media_rw
+    ioprio be 2
+

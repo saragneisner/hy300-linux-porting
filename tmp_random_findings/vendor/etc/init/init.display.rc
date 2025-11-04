@@ -1,0 +1,3 @@
+on boot
+    # display color enhance
+    chown system system /dev/ge2d

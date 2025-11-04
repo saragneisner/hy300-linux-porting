@@ -1,0 +1,6 @@
+# Auto-generated
+# date: Mon Sep 22 09:34:27 CST 2025
+on init
+    setprop wifi.interface wlan0
+    setprop persist.vendor.bluetooth_port /dev/ttyS1
+    setprop ro.bt.bdaddr_path /sys/class/addr_mgt/addr_bt

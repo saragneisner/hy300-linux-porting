@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Blehid Audio HAL Audio Policy Configuration file -->
+
+<module name="blehid" halVersion="2.0">
+	<attachedDevices>
+		<item>hbg_audio</item>
+	</attachedDevices>
+    <mixPorts>
+        <mixPort name="blehid input" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT" channelMasks="AUDIO_CHANNEL_IN_MONO" samplingRates="16000"/>
+        </mixPort>
+    </mixPorts>
+    <devicePorts>
+		<devicePort tagName="hbg_audio" type="AUDIO_DEVICE_IN_BLEHID" role="source">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT" channelMasks="AUDIO_CHANNEL_IN_MONO" samplingRates="16000"/>
+		</devicePort>
+    </devicePorts>
+    <routes>
+        <route type="mix" sink="blehid input" sources="hbg_audio"/>
+    </routes>
+</module>

@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scan>
+    <channel_list standard="dtmb" area="cn">
+        <channel frequency="52500000" bandwidth="8"  />
+        <channel frequency="60500000" bandwidth="8"  />
+        <channel frequency="68500000" bandwidth="8"  />
+        <channel frequency="80000000" bandwidth="8"  />
+        <channel frequency="171000000" bandwidth="8" />
+        <channel frequency="179000000" bandwidth="8" />
+        <channel frequency="187000000" bandwidth="8" />
+        <channel frequency="195000000" bandwidth="8" />
+        <channel frequency="203000000" bandwidth="8" />
+        <channel frequency="211000000" bandwidth="8" />
+        <channel frequency="219000000" bandwidth="8" />
+        <channel frequency="474000000" bandwidth="8" />
+        <channel frequency="482000000" bandwidth="8" />
+        <channel frequency="490000000" bandwidth="8" />
+        <channel frequency="498000000" bandwidth="8" />
+        <channel frequency="506000000" bandwidth="8" />
+        <channel frequency="514000000" bandwidth="8" />
+        <channel frequency="522000000" bandwidth="8" />
+        <channel frequency="530000000" bandwidth="8" />
+        <channel frequency="538000000" bandwidth="8" />
+        <channel frequency="546000000" bandwidth="8" />
+        <channel frequency="554000000" bandwidth="8" />
+        <channel frequency="562000000" bandwidth="8" />
+        <channel frequency="610000000" bandwidth="8" />
+        <channel frequency="618000000" bandwidth="8" />
+        <channel frequency="626000000" bandwidth="8" />
+        <channel frequency="634000000" bandwidth="8" />
+        <channel frequency="642000000" bandwidth="8" />
+        <channel frequency="650000000" bandwidth="8" />
+        <channel frequency="658000000" bandwidth="8" />
+        <channel frequency="666000000" bandwidth="8" />
+        <channel frequency="674000000" bandwidth="8" />
+        <channel frequency="682000000" bandwidth="8" />
+        <channel frequency="690000000" bandwidth="8" />
+        <channel frequency="698000000" bandwidth="8" />
+        <channel frequency="706000000" bandwidth="8" />
+        <channel frequency="714000000" bandwidth="8" />
+        <channel frequency="722000000" bandwidth="8" />
+        <channel frequency="730000000" bandwidth="8" />
+        <channel frequency="738000000" bandwidth="8" />
+        <channel frequency="746000000" bandwidth="8" />
+        <channel frequency="754000000" bandwidth="8" />
+        <channel frequency="762000000" bandwidth="8" />
+        <channel frequency="770000000" bandwidth="8" />
+        <channel frequency="778000000" bandwidth="8" />
+        <channel frequency="786000000" bandwidth="8" />
+        <channel frequency="794000000" bandwidth="8" />
+        <channel frequency="802000000" bandwidth="8" />
+    </channel_list>
+    <channel_list standard="dtmb" area="hk">
+        <channel frequency="474000000" bandwidth="8" />
+        <channel frequency="482000000" bandwidth="8" />
+        <channel frequency="490000000" bandwidth="8" />
+        <channel frequency="498000000" bandwidth="8" />
+        <channel frequency="506000000" bandwidth="8" />
+        <channel frequency="514000000" bandwidth="8" />
+        <channel frequency="522000000" bandwidth="8" />
+        <channel frequency="530000000" bandwidth="8" />
+        <channel frequency="538000000" bandwidth="8" />
+        <channel frequency="546000000" bandwidth="8" />
+        <channel frequency="554000000" bandwidth="8" />
+        <channel frequency="562000000" bandwidth="8" />
+        <channel frequency="570000000" bandwidth="8" />
+        <channel frequency="570000000" bandwidth="8" />
+        <channel frequency="578000000" bandwidth="8" />
+        <channel frequency="586000000" bandwidth="8" />
+        <channel frequency="594000000" bandwidth="8" />
+        <channel frequency="602000000" bandwidth="8" />
+        <channel frequency="610000000" bandwidth="8" />
+        <channel frequency="618000000" bandwidth="8" />
+        <channel frequency="626000000" bandwidth="8" />
+        <channel frequency="634000000" bandwidth="8" />
+        <channel frequency="642000000" bandwidth="8" />
+        <channel frequency="650000000" bandwidth="8" />
+        <channel frequency="658000000" bandwidth="8" />
+        <channel frequency="666000000" bandwidth="8" />
+        <channel frequency="674000000" bandwidth="8" />
+        <channel frequency="682000000" bandwidth="8" />
+        <channel frequency="690000000" bandwidth="8" />
+        <channel frequency="698000000" bandwidth="8" />
+        <channel frequency="706000000" bandwidth="8" />
+        <channel frequency="714000000" bandwidth="8" />
+        <channel frequency="722000000" bandwidth="8" />
+        <channel frequency="730000000" bandwidth="8" />
+        <channel frequency="738000000" bandwidth="8" />
+        <channel frequency="746000000" bandwidth="8" />
+        <channel frequency="754000000" bandwidth="8" />
+        <channel frequency="762000000" bandwidth="8" />
+        <channel frequency="770000000" bandwidth="8" />
+        <channel frequency="778000000" bandwidth="8" />
+        <channel frequency="786000000" bandwidth="8" />
+        <channel frequency="794000000" bandwidth="8" />
+        <channel frequency="802000000" bandwidth="8" />
+    </channel_list>
+    <channel_list standard="dtmb" area="tw">
+        <channel frequency="474000000" bandwidth="8" />
+        <channel frequency="482000000" bandwidth="8" />
+        <channel frequency="490000000" bandwidth="8" />
+        <channel frequency="498000000" bandwidth="8" />
+        <channel frequency="506000000" bandwidth="8" />
+        <channel frequency="514000000" bandwidth="8" />
+        <channel frequency="522000000" bandwidth="8" />
+        <channel frequency="530000000" bandwidth="8" />
+        <channel frequency="538000000" bandwidth="8" />
+        <channel frequency="546000000" bandwidth="8" />
+        <channel frequency="554000000" bandwidth="8" />
+        <channel frequency="562000000" bandwidth="8" />
+        <channel frequency="570000000" bandwidth="8" />
+        <channel frequency="578000000" bandwidth="8" />
+        <channel frequency="586000000" bandwidth="8" />
+        <channel frequency="594000000" bandwidth="8" />
+        <channel frequency="602000000" bandwidth="8" />
+        <channel frequency="610000000" bandwidth="8" />
+        <channel frequency="618000000" bandwidth="8" />
+        <channel frequency="626000000" bandwidth="8" />
+        <channel frequency="634000000" bandwidth="8" />
+        <channel frequency="642000000" bandwidth="8" />
+        <channel frequency="650000000" bandwidth="8" />
+        <channel frequency="658000000" bandwidth="8" />
+        <channel frequency="666000000" bandwidth="8" />
+        <channel frequency="674000000" bandwidth="8" />
+        <channel frequency="682000000" bandwidth="8" />
+        <channel frequency="690000000" bandwidth="8" />
+        <channel frequency="698000000" bandwidth="8" />
+        <channel frequency="706000000" bandwidth="8" />
+        <channel frequency="714000000" bandwidth="8" />
+        <channel frequency="722000000" bandwidth="8" />
+        <channel frequency="730000000" bandwidth="8" />
+        <channel frequency="738000000" bandwidth="8" />
+        <channel frequency="746000000" bandwidth="8" />
+        <channel frequency="754000000" bandwidth="8" />
+        <channel frequency="762000000" bandwidth="8" />
+        <channel frequency="770000000" bandwidth="8" />
+        <channel frequency="778000000" bandwidth="8" />
+        <channel frequency="786000000" bandwidth="8" />
+        <channel frequency="794000000" bandwidth="8" />
+    </channel_list>
+    <channel_list standard="dvbc" area="cn"><!--allband-->
+        <channel frequency="52500000"  modulation="qam64" symbol_rate="6875000" id="2"/>
+        <channel frequency="60250000"  modulation="qam64" symbol_rate="6875000" id="3"/>
+        <channel frequency="68500000"  modulation="qam64" symbol_rate="6875000" id="4"/>
+        <channel frequency="80000000"  modulation="qam64" symbol_rate="6875000" id="5"/>
+        <channel frequency="88000000"  modulation="qam64" symbol_rate="6875000" id="6"/>
+        <channel frequency="115000000" modulation="qam64" symbol_rate="6875000" id="7"/>
+        <channel frequency="123000000" modulation="qam64" symbol_rate="6875000" id="8"/>
+        <channel frequency="131000000" modulation="qam64" symbol_rate="6875000" id="9"/>
+        <channel frequency="139000000" modulation="qam64" symbol_rate="6875000" id="10"/>
+        <channel frequency="147000000" modulation="qam64" symbol_rate="6875000" id="11"/>
+        <channel frequency="155000000" modulation="qam64" symbol_rate="6875000" id="12"/>
+        <channel frequency="163000000" modulation="qam64" symbol_rate="6875000" id="13"/>
+        <channel frequency="171000000" modulation="qam64" symbol_rate="6875000" id="14"/>
+        <channel frequency="179000000" modulation="qam64" symbol_rate="6875000" id="15"/>
+        <channel frequency="187000000" modulation="qam64" symbol_rate="6875000" id="16"/>
+        <channel frequency="195000000" modulation="qam64" symbol_rate="6875000" id="17"/>
+        <channel frequency="203000000" modulation="qam64" symbol_rate="6875000" id="18"/>
+        <channel frequency="211000000" modulation="qam64" symbol_rate="6875000" id="19"/>
+        <channel frequency="219000000" modulation="qam64" symbol_rate="6875000" id="20"/>
+        <channel frequency="227000000" modulation="qam64" symbol_rate="6875000" id="21"/>
+        <channel frequency="235000000" modulation="qam64" symbol_rate="6875000" id="22"/>
+        <channel frequency="243000000" modulation="qam64" symbol_rate="6875000" id="23"/>
+        <channel frequency="251000000" modulation="qam64" symbol_rate="6875000" id="24"/>
+        <channel frequency="259000000" modulation="qam64" symbol_rate="6875000" id="25"/>
+        <channel frequency="267000000" modulation="qam64" symbol_rate="6875000" id="26"/>
+        <channel frequency="275000000" modulation="qam64" symbol_rate="6875000" id="27"/>
+        <channel frequency="283000000" modulation="qam64" symbol_rate="6875000" id="28"/>
+        <channel frequency="291000000" modulation="qam64" symbol_rate="6875000" id="29"/>
+        <channel frequency="299000000" modulation="qam64" symbol_rate="6875000" id="30"/>
+        <channel frequency="307000000" modulation="qam64" symbol_rate="6875000" id="31"/>
+        <channel frequency="315000000" modulation="qam64" symbol_rate="6875000" id="32"/>
+        <channel frequency="323000000" modulation="qam64" symbol_rate="6875000" id="33"/>
+        <channel frequency="331000000" modulation="qam64" symbol_rate="6875000" id="34"/>
+        <channel frequency="339000000" modulation="qam64" symbol_rate="6875000" id="35"/>
+        <channel frequency="347000000" modulation="qam64" symbol_rate="6875000" id="36"/>
+        <channel frequency="355000000" modulation="qam64" symbol_rate="6875000" id="37"/>
+        <channel frequency="363000000" modulation="qam64" symbol_rate="6875000" id="38"/>
+        <channel frequency="371000000" modulation="qam64" symbol_rate="6875000" id="39"/>
+        <channel frequency="379000000" modulation="qam64" symbol_rate="6875000" id="40"/>
+        <channel frequency="387000000" modulation="qam64" symbol_rate="6875000" id="41"/>
+        <channel frequency="395000000" modulation="qam64" symbol_rate="6875000" id="42"/>
+        <channel frequency="403000000" modulation="qam64" symbol_rate="6875000" id="43"/>
+        <channel frequency="411000000" modulation="qam64" symbol_rate="6875000" id="44"/>
+        <channel frequency="419000000" modulation="qam64" symbol_rate="6875000" id="45"/>
+        <channel frequency="427000000" modulation="qam64" symbol_rate="6875000" id="46"/>
+        <channel frequency="435000000" modulation="qam64" symbol_rate="6875000" id="47"/>
+        <channel frequency="443000000" modulation="qam64" symbol_rate="6875000" id="48"/>
+        <channel frequency="451000000" modulation="qam64" symbol_rate="6875000" id="49"/>
+        <channel frequency="459000000" modulation="qam64" symbol_rate="6875000" id="50"/>
+        <channel frequency="467000000" modulation="qam64" symbol_rate="6875000" id="51"/>
+        <channel frequency="474000000" modulation="qam64" symbol_rate="6875000" id="52"/>
+        <channel frequency="482000000" modulation="qam64" symbol_rate="6875000" id="53"/>
+        <channel frequency="490000000" modulation="qam64" symbol_rate="6875000" id="54"/>
+        <channel frequency="498000000" modulation="qam64" symbol_rate="6875000" id="55"/>
+        <channel frequency="506000000" modulation="qam64" symbol_rate="6875000" id="56"/>
+        <channel frequency="514000000" modulation="qam64" symbol_rate="6875000" id="57"/>
+        <channel frequency="522000000" modulation="qam64" symbol_rate="6875000" id="58"/>
+        <channel frequency="530000000" modulation="qam64" symbol_rate="6875000" id="59"/>
+        <channel frequency="538000000" modulation="qam64" symbol_rate="6875000" id="60"/>
+        <channel frequency="546000000" modulation="qam64" symbol_rate="6875000" id="61"/>
+        <channel frequency="554000000" modulation="qam64" symbol_rate="6875000" id="62"/>
+        <channel frequency="562000000" modulation="qam64" symbol_rate="6875000" id="63"/>
+        <channel frequency="570000000" modulation="qam64" symbol_rate="6875000" id="64"/>
+        <channel frequency="578000000" modulation="qam64" symbol_rate="6875000" id="65"/>
+        <channel frequency="586000000" modulation="qam64" symbol_rate="6875000" id="66"/>
+        <channel frequency="594000000" modulation="qam64" symbol_rate="6875000" id="67"/>
+        <channel frequency="602000000" modulation="qam64" symbol_rate="6875000" id="68"/>
+        <channel frequency="610000000" modulation="qam64" symbol_rate="6875000" id="69"/>
+        <channel frequency="618000000" modulation="qam64" symbol_rate="6875000" id="70"/>
+        <channel frequency="626000000" modulation="qam64" symbol_rate="6875000" id="71"/>
+        <channel frequency="634000000" modulation="qam64" symbol_rate="6875000" id="72"/>
+        <channel frequency="642000000" modulation="qam64" symbol_rate="6875000" id="73"/>
+        <channel frequency="650000000" modulation="qam64" symbol_rate="6875000" id="74"/>
+        <channel frequency="658000000" modulation="qam64" symbol_rate="6875000" id="75"/>
+        <channel frequency="666000000" modulation="qam64" symbol_rate="6875000" id="76"/>
+        <channel frequency="674000000" modulation="qam64" symbol_rate="6875000" id="77"/>
+        <channel frequency="682000000" modulation="qam64" symbol_rate="6875000" id="78"/>
+        <channel frequency="690000000" modulation="qam64" symbol_rate="6875000" id="79"/>
+        <channel frequency="698000000" modulation="qam64" symbol_rate="6875000" id="80"/>
+        <channel frequency="706000000" modulation="qam64" symbol_rate="6875000" id="81"/>
+        <channel frequency="714000000" modulation="qam64" symbol_rate="6875000" id="82"/>
+        <channel frequency="722000000" modulation="qam64" symbol_rate="6875000" id="83"/>
+        <channel frequency="730000000" modulation="qam64" symbol_rate="6875000" id="84"/>
+        <channel frequency="738000000" modulation="qam64" symbol_rate="6875000" id="85"/>
+        <channel frequency="746000000" modulation="qam64" symbol_rate="6875000" id="86"/>
+        <channel frequency="754000000" modulation="qam64" symbol_rate="6875000" id="87"/>
+        <channel frequency="762000000" modulation="qam64" symbol_rate="6875000" id="88"/>
+        <channel frequency="770000000" modulation="qam64" symbol_rate="6875000" id="89"/>
+        <channel frequency="778000000" modulation="qam64" symbol_rate="6875000" id="90"/>
+        <channel frequency="786000000" modulation="qam64" symbol_rate="6875000" id="91"/>
+        <channel frequency="794000000" modulation="qam64" symbol_rate="6875000" id="92"/>
+        <channel frequency="802000000" modulation="qam64" symbol_rate="6875000" id="93"/>
+        <channel frequency="810000000" modulation="qam64" symbol_rate="6875000" id="94"/>
+        <channel frequency="818000000" modulation="qam64" symbol_rate="6875000" id="95"/>
+        <channel frequency="826000000" modulation="qam64" symbol_rate="6875000" id="96"/>
+        <channel frequency="834000000" modulation="qam64" symbol_rate="6875000" id="97"/>
+        <channel frequency="842000000" modulation="qam64" symbol_rate="6875000" id="98"/>
+        <channel frequency="850000000" modulation="qam64" symbol_rate="6875000" id="99"/>
+        <channel frequency="858000000" modulation="qam64" symbol_rate="6875000" id="100"/>
+        <channel frequency="866000000" modulation="qam64" symbol_rate="6875000" id="101"/>
+        <channel frequency="874000000" modulation="qam64" symbol_rate="6875000" id="102"/>
+    </channel_list>
+    <channel_list standard="atsc" area="us">
+        <channel frequency="75000000" modulation="qam256"  id="1"/>
+        <channel frequency="57000000" modulation="qam256"  id="2"/>
+        <channel frequency="63000000" modulation="qam256"  id="3"/>
+        <channel frequency="69000000" modulation="qam256"  id="4"/>
+        <channel frequency="79000000" modulation="qam256"  id="5"/>
+        <channel frequency="85000000" modulation="qam256"  id="6"/>
+        <channel frequency="177000000" modulation="qam256" id="7"/>
+        <channel frequency="183000000" modulation="qam256" id="8"/>
+        <channel frequency="189000000" modulation="qam256" id="9"/>
+        <channel frequency="195000000" modulation="qam256" id="10"/>
+        <channel frequency="201000000" modulation="qam256" id="11"/>
+        <channel frequency="207000000" modulation="qam256" id="12"/>
+        <channel frequency="213000000" modulation="qam256" id="13"/>
+        <channel frequency="123000000" modulation="qam256" id="14"/>
+        <channel frequency="129000000" modulation="qam256" id="15"/>
+        <channel frequency="135000000" modulation="qam256" id="16"/>
+        <channel frequency="141000000" modulation="qam256" id="17"/>
+        <channel frequency="147000000" modulation="qam256" id="18"/>
+        <channel frequency="153000000" modulation="qam256" id="19"/>
+        <channel frequency="159000000" modulation="qam256" id="20"/>
+        <channel frequency="165000000" modulation="qam256" id="21"/>
+        <channel frequency="171000000" modulation="qam256" id="22"/>
+        <channel frequency="219000000" modulation="qam256" id="23"/>
+        <channel frequency="225000000" modulation="qam256" id="24"/>
+        <channel frequency="231000000" modulation="qam256" id="25"/>
+        <channel frequency="237000000" modulation="qam256" id="26"/>
+        <channel frequency="243000000" modulation="qam256" id="27"/>
+        <channel frequency="249000000" modulation="qam256" id="28"/>
+        <channel frequency="255000000" modulation="qam256" id="29"/>
+        <channel frequency="261000000" modulation="qam256" id="30"/>
+        <channel frequency="267000000" modulation="qam256" id="31"/>
+        <channel frequency="273000000" modulation="qam256" id="32"/>
+        <channel frequency="279000000" modulation="qam256" id="33"/>
+        <channel frequency="285000000" modulation="qam256" id="34"/>
+        <channel frequency="291000000" modulation="qam256" id="35"/>
+        <channel frequency="297000000" modulation="qam256" id="36"/>
+        <channel frequency="303000000" modulation="qam256" id="37"/>
+        <channel frequency="309000000" modulation="qam256" id="38"/>
+        <channel frequency="315000000" modulation="qam256" id="39"/>
+        <channel frequency="321000000" modulation="qam256" id="40"/>
+        <channel frequency="327000000" modulation="qam256" id="41"/>
+        <channel frequency="333000000" modulation="qam256" id="42"/>
+        <channel frequency="339000000" modulation="qam256" id="43"/>
+        <channel frequency="345000000" modulation="qam256" id="44"/>
+        <channel frequency="351000000" modulation="qam256" id="45"/>
+        <channel frequency="357000000" modulation="qam256" id="46"/>
+        <channel frequency="363000000" modulation="qam256" id="47"/>
+        <channel frequency="369000000" modulation="qam256" id="48"/>
+        <channel frequency="375000000" modulation="qam256" id="49"/>
+        <channel frequency="381000000" modulation="qam256" id="50"/>
+        <channel frequency="387000000" modulation="qam256" id="51"/>
+        <channel frequency="393000000" modulation="qam256" id="52"/>
+        <channel frequency="399000000" modulation="qam256" id="53"/>
+        <channel frequency="405000000" modulation="qam256" id="54"/>
+        <channel frequency="411000000" modulation="qam256" id="55"/>
+        <channel frequency="417000000" modulation="qam256" id="56"/>
+        <channel frequency="423000000" modulation="qam256" id="57"/>
+        <channel frequency="429000000" modulation="qam256" id="58"/>
+        <channel frequency="435000000" modulation="qam256" id="59"/>
+        <channel frequency="441000000" modulation="qam256" id="60"/>
+        <channel frequency="447000000" modulation="qam256" id="61"/>
+        <channel frequency="453000000" modulation="qam256" id="62"/>
+        <channel frequency="459000000" modulation="qam256" id="63"/>
+        <channel frequency="465000000" modulation="qam256" id="64"/>
+        <channel frequency="471000000" modulation="qam256" id="65"/>
+        <channel frequency="477000000" modulation="qam256" id="66"/>
+        <channel frequency="483000000" modulation="qam256" id="67"/>
+        <channel frequency="489000000" modulation="qam256" id="68"/>
+        <channel frequency="495000000" modulation="qam256" id="69"/>
+        <channel frequency="501000000" modulation="qam256" id="70"/>
+        <channel frequency="507000000" modulation="qam256" id="71"/>
+        <channel frequency="513000000" modulation="qam256" id="72"/>
+        <channel frequency="519000000" modulation="qam256" id="73"/>
+        <channel frequency="525000000" modulation="qam256" id="74"/>
+        <channel frequency="531000000" modulation="qam256" id="75"/>
+        <channel frequency="537000000" modulation="qam256" id="76"/>
+        <channel frequency="543000000" modulation="qam256" id="77"/>
+        <channel frequency="549000000" modulation="qam256" id="78"/>
+        <channel frequency="555000000" modulation="qam256" id="79"/>
+        <channel frequency="561000000" modulation="qam256" id="80"/>
+        <channel frequency="567000000" modulation="qam256" id="81"/>
+        <channel frequency="573000000" modulation="qam256" id="82"/>
+        <channel frequency="579000000" modulation="qam256" id="83"/>
+        <channel frequency="585000000" modulation="qam256" id="84"/>
+        <channel frequency="591000000" modulation="qam256" id="85"/>
+        <channel frequency="597000000" modulation="qam256" id="86"/>
+        <channel frequency="603000000" modulation="qam256" id="87"/>
+        <channel frequency="609000000" modulation="qam256" id="88"/>
+        <channel frequency="615000000" modulation="qam256" id="89"/>
+        <channel frequency="621000000" modulation="qam256" id="90"/>
+        <channel frequency="627000000" modulation="qam256" id="91"/>
+        <channel frequency="633000000" modulation="qam256" id="92"/>
+        <channel frequency="639000000" modulation="qam256" id="93"/>
+        <channel frequency="645000000" modulation="qam256" id="94"/>
+        <channel frequency="93000000"  modulation="qam256" id="95"/>
+        <channel frequency="99000000"  modulation="qam256" id="96"/>
+        <channel frequency="105000000" modulation="qam256" id="97"/>
+        <channel frequency="111000000" modulation="qam256" id="98"/>
+        <channel frequency="117000000" modulation="qam256" id="99"/>
+        <channel frequency="651000000" modulation="qam256" id="100"/>
+        <channel frequency="657000000" modulation="qam256" id="101"/>
+        <channel frequency="663000000" modulation="qam256" id="102"/>
+        <channel frequency="669000000" modulation="qam256" id="103"/>
+        <channel frequency="675000000" modulation="qam256" id="104"/>
+        <channel frequency="681000000" modulation="qam256" id="105"/>
+        <channel frequency="687000000" modulation="qam256" id="106"/>
+        <channel frequency="693000000" modulation="qam256" id="107"/>
+        <channel frequency="699000000" modulation="qam256" id="108"/>
+        <channel frequency="705000000" modulation="qam256" id="109"/>
+        <channel frequency="711000000" modulation="qam256" id="110"/>
+        <channel frequency="717000000" modulation="qam256" id="111"/>
+        <channel frequency="723000000" modulation="qam256" id="112"/>
+        <channel frequency="729000000" modulation="qam256" id="113"/>
+        <channel frequency="735000000" modulation="qam256" id="114"/>
+        <channel frequency="741000000" modulation="qam256" id="115"/>
+        <channel frequency="747000000" modulation="qam256" id="116"/>
+        <channel frequency="753000000" modulation="qam256" id="117"/>
+        <channel frequency="759000000" modulation="qam256" id="118"/>
+        <channel frequency="765000000" modulation="qam256" id="119"/>
+        <channel frequency="771000000" modulation="qam256" id="120"/>
+        <channel frequency="777000000" modulation="qam256" id="121"/>
+        <channel frequency="783000000" modulation="qam256" id="122"/>
+        <channel frequency="789000000" modulation="qam256" id="123"/>
+        <channel frequency="795000000" modulation="qam256" id="124"/>
+        <channel frequency="801000000" modulation="qam256" id="125"/>
+        <channel frequency="807000000" modulation="qam256" id="126"/>
+        <channel frequency="813000000" modulation="qam256" id="127"/>
+        <channel frequency="819000000" modulation="qam256" id="128"/>
+        <channel frequency="825000000" modulation="qam256" id="129"/>
+        <channel frequency="831000000" modulation="qam256" id="130"/>
+        <channel frequency="837000000" modulation="qam256" id="131"/>
+        <channel frequency="843000000" modulation="qam256" id="132"/>
+        <channel frequency="849000000" modulation="qam256" id="133"/>
+        <channel frequency="855000000" modulation="qam256" id="134"/>
+        <channel frequency="861000000" modulation="qam256" id="135"/>
+    </channel_list>
+    <channel_list standard="dvbt" area="fr">
+        <channel frequency="177500000" bandwidth="7" id="2"/>
+        <channel frequency="184500000" bandwidth="7" id="3"/>
+        <channel frequency="191500000" bandwidth="7" id="4"/>
+        <channel frequency="198500000" bandwidth="7" id="5"/>
+        <channel frequency="205500000" bandwidth="7" id="6"/>
+        <channel frequency="212500000" bandwidth="7" id="7"/>
+        <channel frequency="219500000" bandwidth="7" id="8"/>
+        <channel frequency="226500000" bandwidth="7" id="9"/>
+        <channel frequency="474000000" bandwidth="8" id="10"/>
+        <channel frequency="482000000" bandwidth="8" id="11"/>
+        <channel frequency="490000000" bandwidth="8" id="12"/>
+        <channel frequency="498000000" bandwidth="8" id="13"/>
+        <channel frequency="506000000" bandwidth="8" id="14"/>
+        <channel frequency="514000000" bandwidth="8" id="15"/>
+        <channel frequency="522000000" bandwidth="8" id="16"/>
+        <channel frequency="530000000" bandwidth="8" id="17"/>
+        <channel frequency="538000000" bandwidth="8" id="18"/>
+        <channel frequency="546000000" bandwidth="8" id="19"/>
+        <channel frequency="554000000" bandwidth="8" id="20"/>
+        <channel frequency="562000000" bandwidth="8" id="21"/>
+        <channel frequency="570000000" bandwidth="8" id="22"/>
+        <channel frequency="578000000" bandwidth="8" id="23"/>
+        <channel frequency="586000000" bandwidth="8" id="24"/>
+        <channel frequency="594000000" bandwidth="8" id="25"/>
+        <channel frequency="602000000" bandwidth="8" id="26"/>
+        <channel frequency="610000000" bandwidth="8" id="27"/>
+        <channel frequency="618000000" bandwidth="8" id="28"/>
+        <channel frequency="626000000" bandwidth="8" id="29"/>
+        <channel frequency="634000000" bandwidth="8" id="30"/>
+        <channel frequency="642000000" bandwidth="8" id="31"/>
+        <channel frequency="650000000" bandwidth="8" id="32"/>
+        <channel frequency="658000000" bandwidth="8" id="33"/>
+        <channel frequency="666000000" bandwidth="8" id="34"/>
+        <channel frequency="674000000" bandwidth="8" id="35"/>
+        <channel frequency="682000000" bandwidth="8" id="36"/>
+        <channel frequency="690000000" bandwidth="8" id="37"/>
+        <channel frequency="698000000" bandwidth="8" id="38"/>
+        <channel frequency="706000000" bandwidth="8" id="39"/>
+        <channel frequency="714000000" bandwidth="8" id="40"/>
+        <channel frequency="722000000" bandwidth="8" id="41"/>
+        <channel frequency="730000000" bandwidth="8" id="42"/>
+        <channel frequency="738000000" bandwidth="8" id="43"/>
+        <channel frequency="746000000" bandwidth="8" id="44"/>
+        <channel frequency="754000000" bandwidth="8" id="45"/>
+        <channel frequency="762000000" bandwidth="8" id="46"/>
+        <channel frequency="770000000" bandwidth="8" id="47"/>
+        <channel frequency="778000000" bandwidth="8" id="48"/>
+        <channel frequency="786000000" bandwidth="8" id="49"/>
+        <channel frequency="794000000" bandwidth="8" id="50"/>
+        <channel frequency="802000000" bandwidth="8" id="51"/>
+        <channel frequency="810000000" bandwidth="8" id="52"/>
+        <channel frequency="818000000" bandwidth="8" id="53"/>
+        <channel frequency="826000000" bandwidth="8" id="54"/>
+        <channel frequency="834000000" bandwidth="8" id="55"/>
+        <channel frequency="842000000" bandwidth="8" id="56"/>
+        <channel frequency="850000000" bandwidth="8" id="57"/>
+        <channel frequency="858000000" bandwidth="8" id="58"/>
+    </channel_list>
+    <channel_list standard="isdb" area="br">
+        <channel frequency="177143000" bandwidth="auto" id="2"/>
+        <channel frequency="183143000" bandwidth="auto" id="3"/>
+        <channel frequency="189143000" bandwidth="auto" id="4"/>
+        <channel frequency="195143000" bandwidth="auto" id="5"/>
+        <channel frequency="201143000" bandwidth="auto" id="6"/>
+        <channel frequency="207143000" bandwidth="auto" id="7"/>
+        <channel frequency="213143000" bandwidth="auto" id="8"/>
+        <channel frequency="473143000" bandwidth="auto" id="9"/>
+        <channel frequency="479143000" bandwidth="auto" id="10"/>
+        <channel frequency="485143000" bandwidth="auto" id="11"/>
+        <channel frequency="491143000" bandwidth="auto" id="12"/>
+        <channel frequency="497143000" bandwidth="auto" id="13"/>
+        <channel frequency="503143000" bandwidth="auto" id="14"/>
+        <channel frequency="509143000" bandwidth="auto" id="15"/>
+        <channel frequency="515143000" bandwidth="auto" id="16"/>
+        <channel frequency="521143000" bandwidth="auto" id="17"/>
+        <channel frequency="527143000" bandwidth="auto" id="18"/>
+        <channel frequency="533143000" bandwidth="auto" id="19"/>
+        <channel frequency="539143000" bandwidth="auto" id="20"/>
+        <channel frequency="545143000" bandwidth="auto" id="21"/>
+        <channel frequency="551143000" bandwidth="auto" id="22"/>
+        <channel frequency="557143000" bandwidth="auto" id="23"/>
+        <channel frequency="563143000" bandwidth="auto" id="24"/>
+        <channel frequency="569143000" bandwidth="auto" id="25"/>
+        <channel frequency="575143000" bandwidth="auto" id="26"/>
+        <channel frequency="581143000" bandwidth="auto" id="27"/>
+        <channel frequency="587143000" bandwidth="auto" id="28"/>
+        <channel frequency="593143000" bandwidth="auto" id="29"/>
+        <channel frequency="599143000" bandwidth="auto" id="30"/>
+        <channel frequency="605143000" bandwidth="auto" id="31"/>
+        <channel frequency="617143000" bandwidth="auto" id="32"/>
+        <channel frequency="623143000" bandwidth="auto" id="33"/>
+        <channel frequency="629143000" bandwidth="auto" id="34"/>
+        <channel frequency="635143000" bandwidth="auto" id="35"/>
+        <channel frequency="641143000" bandwidth="auto" id="36"/>
+        <channel frequency="647143000" bandwidth="auto" id="37"/>
+        <channel frequency="653143000" bandwidth="auto" id="38"/>
+        <channel frequency="659143000" bandwidth="auto" id="39"/>
+        <channel frequency="665143000" bandwidth="auto" id="40"/>
+        <channel frequency="671143000" bandwidth="auto" id="41"/>
+        <channel frequency="677143000" bandwidth="auto" id="42"/>
+        <channel frequency="683143000" bandwidth="auto" id="43"/>
+        <channel frequency="689143000" bandwidth="auto" id="44"/>
+        <channel frequency="695143000" bandwidth="auto" id="45"/>
+        <channel frequency="701143000" bandwidth="auto" id="46"/>
+        <channel frequency="707143000" bandwidth="auto" id="47"/>
+        <channel frequency="713143000" bandwidth="auto" id="48"/>
+        <channel frequency="719143000" bandwidth="auto" id="49"/>
+        <channel frequency="725143000" bandwidth="auto" id="50"/>
+        <channel frequency="731143000" bandwidth="auto" id="51"/>
+        <channel frequency="737143000" bandwidth="auto" id="52"/>
+        <channel frequency="743143000" bandwidth="auto" id="53"/>
+        <channel frequency="749143000" bandwidth="auto" id="54"/>
+        <channel frequency="755143000" bandwidth="auto" id="55"/>
+        <channel frequency="761143000" bandwidth="auto" id="56"/>
+        <channel frequency="767143000" bandwidth="auto" id="57"/>
+        <channel frequency="773143000" bandwidth="auto" id="58"/>
+        <channel frequency="779143000" bandwidth="auto" id="59"/>
+        <channel frequency="785143000" bandwidth="auto" id="60"/>
+        <channel frequency="791143000" bandwidth="auto" id="61"/>
+        <channel frequency="797143000" bandwidth="auto" id="62"/>
+        <channel frequency="803143000" bandwidth="auto" id="63"/>
+    </channel_list>
+
+    <channel_list standard="auto" area="cn">
+        <channel frequency="44250000"/>
+        <channel frequency="48250000"/>
+        <channel frequency="55250000"/>
+        <channel frequency="62250000"/>
+        <channel frequency="69250000"/>
+        <channel frequency="76250000"/>
+        <channel frequency="83250000"/>
+        <channel frequency="90250000"/>
+        <channel frequency="97250000"/>
+        <channel frequency="105250000"/>
+        <channel frequency="112250000"/>
+        <channel frequency="119250000"/>
+        <channel frequency="126250000"/>
+        <channel frequency="133250000"/>
+        <channel frequency="140250000"/>
+        <channel frequency="147250000"/>
+        <channel frequency="154250000"/>
+        <channel frequency="161250000"/>
+        <channel frequency="168250000"/>
+        <channel frequency="175250000"/>
+        <channel frequency="182250000"/>
+        <channel frequency="189250000"/>
+        <channel frequency="196250000"/>
+        <channel frequency="203250000"/>
+        <channel frequency="210250000"/>
+        <channel frequency="217250000"/>
+        <channel frequency="224250000"/>
+        <channel frequency="231250000"/>
+        <channel frequency="238250000"/>
+        <channel frequency="245250000"/>
+        <channel frequency="252250000"/>
+        <channel frequency="259250000"/>
+        <channel frequency="266250000"/>
+        <channel frequency="273250000"/>
+        <channel frequency="280250000"/>
+        <channel frequency="287250000"/>
+        <channel frequency="294250000"/>
+        <channel frequency="303250000"/>
+        <channel frequency="311250000"/>
+        <channel frequency="319250000"/>
+        <channel frequency="327250000"/>
+        <channel frequency="335250000"/>
+        <channel frequency="343250000"/>
+        <channel frequency="351250000"/>
+        <channel frequency="359250000"/>
+        <channel frequency="367250000"/>
+        <channel frequency="375250000"/>
+        <channel frequency="383250000"/>
+        <channel frequency="391250000"/>
+        <channel frequency="399250000"/>
+        <channel frequency="407250000"/>
+        <channel frequency="415250000"/>
+        <channel frequency="423250000"/>
+        <channel frequency="431250000"/>
+        <channel frequency="439250000"/>
+        <channel frequency="447250000"/>
+        <channel frequency="455250000"/>
+        <channel frequency="463250000"/>
+        <channel frequency="471250000"/>
+        <channel frequency="479250000"/>
+        <channel frequency="487250000"/>
+        <channel frequency="495250000"/>
+        <channel frequency="503250000"/>
+        <channel frequency="511250000"/>
+        <channel frequency="519250000"/>
+        <channel frequency="527250000"/>
+        <channel frequency="535250000"/>
+        <channel frequency="543250000"/>
+        <channel frequency="551250000"/>
+        <channel frequency="559250000"/>
+        <channel frequency="567250000"/>
+        <channel frequency="575250000"/>
+        <channel frequency="583250000"/>
+        <channel frequency="591250000"/>
+        <channel frequency="599250000"/>
+        <channel frequency="607250000"/>
+        <channel frequency="615250000"/>
+        <channel frequency="623250000"/>
+        <channel frequency="631250000"/>
+        <channel frequency="639250000"/>
+        <channel frequency="647250000"/>
+        <channel frequency="655250000"/>
+        <channel frequency="663250000"/>
+        <channel frequency="671250000"/>
+        <channel frequency="679250000"/>
+        <channel frequency="687250000"/>
+        <channel frequency="695250000"/>
+        <channel frequency="703250000"/>
+        <channel frequency="711250000"/>
+        <channel frequency="719250000"/>
+        <channel frequency="727250000"/>
+        <channel frequency="735250000"/>
+        <channel frequency="743250000"/>
+        <channel frequency="751250000"/>
+        <channel frequency="759250000"/>
+        <channel frequency="767250000"/>
+        <channel frequency="775250000"/>
+        <channel frequency="783250000"/>
+        <channel frequency="791250000"/>
+        <channel frequency="799250000"/>
+        <channel frequency="807250000"/>
+        <channel frequency="815250000"/>
+        <channel frequency="823250000"/>
+        <channel frequency="831250000"/>
+        <channel frequency="839250000"/>
+        <channel frequency="847250000"/>
+        <channel frequency="855250000"/>
+        <channel frequency="863250000"/>
+        <channel frequency="868250000"/>
+    </channel_list>
+
+    <channel_list standard="ntsc,air" area="us">
+        <channel frequency="55250000" id="2"/>
+        <channel frequency="61250000" id="3"/>
+        <channel frequency="67250000" id="4"/>
+        <channel frequency="77250000" id="5"/>
+        <channel frequency="83250000" id="6"/>
+        <channel frequency="175250000" id="7"/>
+        <channel frequency="181250000" id="8"/>
+        <channel frequency="187250000" id="9"/>
+        <channel frequency="193250000" id="10"/>
+        <channel frequency="199250000" id="11"/>
+        <channel frequency="205250000" id="12"/>
+        <channel frequency="211250000" id="13"/>
+        <channel frequency="471250000" id="14"/>
+        <channel frequency="477250000" id="15"/>
+        <channel frequency="483250000" id="16"/>
+        <channel frequency="489250000" id="17"/>
+        <channel frequency="495250000" id="18"/>
+        <channel frequency="501250000" id="19"/>
+        <channel frequency="507250000" id="20"/>
+        <channel frequency="513250000" id="21"/>
+        <channel frequency="519250000" id="22"/>
+        <channel frequency="525250000" id="23"/>
+        <channel frequency="531250000" id="24"/>
+        <channel frequency="537250000" id="25"/>
+        <channel frequency="543250000" id="26"/>
+        <channel frequency="549250000" id="27"/>
+        <channel frequency="555250000" id="28"/>
+        <channel frequency="561250000" id="29"/>
+        <channel frequency="567250000" id="30"/>
+        <channel frequency="573250000" id="31"/>
+        <channel frequency="579250000" id="32"/>
+        <channel frequency="585250000" id="33"/>
+        <channel frequency="591250000" id="34"/>
+        <channel frequency="597250000" id="35"/>
+        <channel frequency="603250000" id="36"/>
+        <channel frequency="609250000" id="37"/>
+        <channel frequency="615250000" id="38"/>
+        <channel frequency="621250000" id="39"/>
+        <channel frequency="627250000" id="40"/>
+        <channel frequency="633250000" id="41"/>
+        <channel frequency="639250000" id="42"/>
+        <channel frequency="645250000" id="43"/>
+        <channel frequency="651250000" id="44"/>
+        <channel frequency="657250000" id="45"/>
+        <channel frequency="663250000" id="46"/>
+        <channel frequency="669250000" id="47"/>
+        <channel frequency="675250000" id="48"/>
+        <channel frequency="681250000" id="49"/>
+        <channel frequency="687250000" id="50"/>
+        <channel frequency="693250000" id="51"/>
+        <channel frequency="699250000" id="52"/>
+        <channel frequency="705250000" id="53"/>
+        <channel frequency="711250000" id="54"/>
+        <channel frequency="717250000" id="55"/>
+        <channel frequency="723250000" id="56"/>
+        <channel frequency="729250000" id="57"/>
+        <channel frequency="735250000" id="58"/>
+        <channel frequency="741250000" id="59"/>
+        <channel frequency="747250000" id="60"/>
+        <channel frequency="753250000" id="61"/>
+        <channel frequency="759250000" id="62"/>
+        <channel frequency="765250000" id="63"/>
+        <channel frequency="771250000" id="64"/>
+        <channel frequency="777250000" id="65"/>
+        <channel frequency="783250000" id="66"/>
+        <channel frequency="789250000" id="67"/>
+        <channel frequency="795250000" id="68"/>
+        <channel frequency="801250000" id="69"/>
+    </channel_list>
+</scan>
+

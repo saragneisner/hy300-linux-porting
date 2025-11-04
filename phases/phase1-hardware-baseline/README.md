@@ -1,9 +1,11 @@
 # Phase I: Hardware Baseline Establishment
 
-**Status:** 🎯 **ACTIVE**  
+**Status:** 🎯 **ACTIVE - Phase I: 3/9 Tasks Complete (33%)**  
 **Start Date:** November 3, 2025  
-**Estimated Duration:** 2-3 days  
-**Prerequisites:** Root access (✅ Available)
+**Current Phase:** Hardware Baseline (no UART needed)  
+**Blocker:** CP2102 serial adapter in transit (Phase II on hold)  
+**Estimated Duration:** 2-3 days remaining (est. Nov 5-6)  
+**Prerequisites:** Root access (✅ Available) | eMMC dump (✅ 7.3GB available)
 
 ## Overview
 
@@ -56,21 +58,23 @@ Extract and analyze all drivers:
 
 ```
 Task 001: Root Access Verification ─────┐
-                                         ├──► Task 002: System Dump ─────┐
-                                         │                                │
-                                         ├──► Task 003: Module Docs ─────┤
-                                         │                                ├──► Task 008: Phase Summary
-                                         ├──► Task 004: Register Map ────┤
-                                         │                                │
-                                         ├──► Task 005: Calibration ─────┤
-                                         │                                │
-                                         ├──► Task 006: Boot Analysis ───┤
-                                         │                                │
-                                         └──► Task 007: Network Config ──┘
+                                         ├──► Task 002: Analyze FEX Files ┐
+                                         │                                 │
+                                         ├──► Task 003: System Dump ──────┤
+                                         │                                 │
+                                         ├──► Task 004: Module Docs ──────┤
+                                         │                                 │
+                                         ├──► Task 005: Register Map ─────┤
+                                         │                                 ├──► Task 009: Phase Summary
+                                         ├──► Task 006: Calibration ──────┤
+                                         │                                 │
+                                         ├──► Task 007: Boot Analysis ────┤
+                                         │                                 │
+                                         └──► Task 008: Network Config ───┘
 ```
 
 ### Task 001: Root Access Verification ⏱️ 30 min
-**Status:** pending  
+**Status:** ✅ completed  
 **Priority:** CRITICAL  
 **Dependencies:** None
 
@@ -95,8 +99,85 @@ Verify and document root access methods.
 
 ---
 
-### Task 002: Complete System Dump 📦 2-3 hours
-**Status:** pending  
+### Task 002: Analyze FEX Image Files 🔧 1-2 hours
+**Status:** ✅ completed  
+**Priority:** CRITICAL  
+**Dependencies:** Task 001
+
+Parse and extract hardware configuration data from unpacked FEX files in `stock_image/` directory.
+
+**Context:**
+FEX files contain factory-programmed hardware parameters including DRAM timings, GPIO configurations, display settings, thermal parameters, and peripheral addresses. This analysis provides hardware ground truth and validates research findings.
+
+**Steps:**
+1. Parse FEX file structure and sections
+2. Extract DRAM parameters and timings
+3. Document GPIO configuration and pin mappings
+4. Extract display/TCON settings
+5. Identify peripheral I2C/SPI addresses
+6. Extract thermal management configuration
+7. Document boot parameters and UART settings
+8. Cross-reference with existing research
+
+**Key Parameters to Extract:**
+- **DRAM:** Data rate, CAS latency, timings, voltage
+- **GPIO:** Voltage rails, pin mappings, drive strength
+- **Display:** Resolution, refresh rate, pixel clock, color space
+- **Thermal:** Fan PWM, temperature thresholds, sensor addresses
+- **Peripherals:** I2C/SPI addresses, motor pins, IR receiver config
+- **Boot:** U-Boot environment, bootloader params, UART settings
+
+**Commands:**
+```bash
+# List all FEX sections
+grep "^\[" stock_image/sys_config.fex | sort | uniq
+
+# Extract DRAM parameters
+grep -A 30 "^\[dram_para\]" stock_image/sys_config.fex
+
+# Extract GPIO configuration
+grep -A 50 "^\[gpio_para\]" stock_image/sys_config.fex
+
+# Extract display settings
+grep -A 40 "^\[lcd_para\]" stock_image/sys_config.fex
+
+# Extract I2C/SPI devices
+grep -E "^\[twi|^\[spi" stock_image/sys_config.fex -A 20
+
+# Extract thermal settings
+grep -A 10 "^\[ths_para\]" stock_image/sys_config.fex
+
+# Extract boot configuration
+grep -A 20 "^\[boot_init_para\]\|^\[uart_para\]" stock_image/sys_config.fex
+```
+
+**Success Criteria:**
+- [ ] FEX file structure documented
+- [ ] DRAM parameters extracted and analyzed
+- [ ] GPIO configuration documented with pin mappings
+- [ ] Display settings extracted with all parameters
+- [ ] Peripheral addresses identified
+- [ ] Thermal configuration documented
+- [ ] Boot parameters extracted
+- [ ] Cross-reference with research completed
+- [ ] Summary document created with findings
+- [ ] Any discrepancies with research documented
+
+**Deliverables:**
+- `stock_image/ANALYSIS/dram-parameters.txt`
+- `stock_image/ANALYSIS/gpio-configuration.txt`
+- `stock_image/ANALYSIS/display-settings.txt`
+- `stock_image/ANALYSIS/peripheral-addresses.txt`
+- `stock_image/ANALYSIS/thermal-config.txt`
+- `stock_image/ANALYSIS/boot-config.txt`
+- `stock_image/ANALYSIS/fex-extraction-summary.md`
+- `stock_image/METADATA/fex-sections.txt`
+- `stock_image/README.md` (updated with analysis status)
+
+---
+
+### Task 003: Complete System Dump 📦 2-3 hours
+**Status:** ✅ completed  
 **Priority:** CRITICAL  
 **Dependencies:** Task 001
 
@@ -143,7 +224,7 @@ adb pull /sdcard/boot.img ./backup/
 
 ---
 
-### Task 003: Kernel Module Documentation 📋 2-3 hours
+### Task 004: Kernel Module Documentation 📋 2-3 hours
 **Status:** pending  
 **Priority:** HIGH  
 **Dependencies:** Task 001
@@ -193,7 +274,7 @@ adb shell su -c "find /system /vendor -name '*.ko' -type f" > module_paths.txt
 
 ---
 
-### Task 004: Hardware Register Mapping 🔬 4-6 hours
+### Task 005: Hardware Register Mapping 🔬 4-6 hours
 **Status:** pending  
 **Priority:** HIGH  
 **Dependencies:** Task 001
@@ -243,10 +324,10 @@ adb shell su -c "cat /sys/kernel/debug/clk/clk_summary > /sdcard/clocks.txt"
 
 ---
 
-### Task 005: Calibration Data Extraction 📊 2-3 hours
+### Task 006: Calibration Data Extraction 📊 2-3 hours
 **Status:** pending  
 **Priority:** HIGH  
-**Dependencies:** Task 002
+**Dependencies:** Task 003
 
 Locate and extract all calibration and configuration data.
 
@@ -289,7 +370,7 @@ adb shell su -c "find /persist -type f"
 
 ---
 
-### Task 006: Boot Process Analysis 🔍 2-3 hours
+### Task 007: Boot Process Analysis 🔍 2-3 hours
 **Status:** pending  
 **Priority:** MEDIUM  
 **Dependencies:** Task 001
@@ -334,7 +415,7 @@ adb shell su -c "cat /proc/uptime > /sdcard/uptime.txt"
 
 ---
 
-### Task 007: Network Configuration Baseline 🌐 1-2 hours
+### Task 008: Network Configuration Baseline 🌐 1-2 hours
 **Status:** pending  
 **Priority:** MEDIUM  
 **Dependencies:** Task 001
@@ -378,10 +459,10 @@ adb shell su -c "find /vendor/firmware -name '*wifi*' -o -name '*bt*'"
 
 ---
 
-### Task 008: Phase I Summary and Validation ✅ 2-3 hours
+### Task 009: Phase I Summary and Validation ✅ 2-3 hours
 **Status:** pending  
 **Priority:** CRITICAL  
-**Dependencies:** Tasks 001-007
+**Dependencies:** Tasks 001-008
 
 Validate all Phase I work and prepare Phase II.
 
@@ -517,6 +598,93 @@ adb shell su -c "id"
 adb shell su -c "tar czf /sdcard/backup.tar.gz /path"
 adb pull /sdcard/backup.tar.gz
 ```
+
+## Abort & Recover
+
+**CRITICAL:** If something fails during this phase, follow these steps immediately.
+
+### Failure Scenario: ADB Connection Lost
+
+**Symptoms:** Device becomes unresponsive to ADB  
+**Recovery Time:** < 5 minutes
+
+**Steps:**
+```bash
+# Check physical connection
+lsusb | grep -i "hy300\|sunxi"
+
+# Restart ADB daemon
+adb kill-server
+adb start-server
+adb devices
+
+# If still offline, restart device
+adb reboot
+sleep 30
+adb devices  # Should re-appear
+```
+
+### Failure Scenario: Backup Corruption Detected
+
+**Symptoms:** Backup file < 2GB or checksum mismatch  
+**Recovery Time:** 30-60 minutes (restart backup)
+
+**Steps:**
+```bash
+# Verify backup integrity
+cd /backup
+sha256sum -c hy300-complete-backup.sha256
+
+# If failed: check storage space
+df -h /backup  # Need > 5GB free
+
+# Delete partial backup and retry
+rm -f *.incomplete *.partial
+adb shell "dd if=/dev/mmcblk0 bs=1M" | \
+  tee hy300-complete-backup.bin | \
+  sha256sum > hy300-complete-backup.sha256
+
+# Verify
+sha256sum -c hy300-complete-backup.sha256
+```
+
+### Failure Scenario: Critical Data Extraction Failed
+
+**Symptoms:** Essential files not extracted (dmesg, device tree, modules)  
+**Recovery Time:** 5-10 minutes per file
+
+**Steps:**
+```bash
+# Identify missing file
+ls -la phase1-data/
+
+# Re-extract single file
+adb pull /path/on/device /local/path
+
+# If permission denied
+adb shell su -c "cat /file > /sdcard/temp-file"
+adb pull /sdcard/temp-file ./phase1-data/
+adb shell su -c "rm /sdcard/temp-file"
+```
+
+### Emergency Recovery: Restore to Factory State
+
+**If device becomes unstable but still boots:**
+
+```bash
+# Immediate full backup (emergency recovery)
+mkdir -p /backup/emergency-$(date +%Y%m%d_%H%M%S)
+cd /backup/emergency-*/
+
+adb shell "dd if=/dev/mmcblk0 bs=1M" | pv > complete-dump.bin
+adb pull / complete-filesystem/ 2>/dev/null &
+
+# Once backups complete, device is recoverable
+```
+
+**For detailed recovery procedures:** See `phases/RECOVERY_TEMPLATE.md`
+
+---
 
 ## Success Metrics
 

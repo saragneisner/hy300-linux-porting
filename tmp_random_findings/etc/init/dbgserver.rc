@@ -1,0 +1,11 @@
+on property:persist.vendor.dbgserver=1
+    start dbgserver
+
+on property:persist.vendor.dbgserver=0
+    stop dbgserver
+
+service dbgserver /vendor/bin/dbgserver
+    class late_start
+    disabled
+    user root
+    group root

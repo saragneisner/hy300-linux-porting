@@ -1,0 +1,4 @@
+vendor.display.config::IDisplayConfig u:object_r:vendor_displayconfig_hwservice:s0
+vendor.aw.homlet.tvsystem.tvserver::ITvServer                        u:object_r:tvserver_hwservice:s0
+vendor.aw.hardware.pqcontrol::IPQControl u:object_r:vendor_pqcontrol_hwservice:s0
+vendor.aw.hardware.btvserver::IBtvServer u:object_r:vendor_btvserverhal_hwservice:s0

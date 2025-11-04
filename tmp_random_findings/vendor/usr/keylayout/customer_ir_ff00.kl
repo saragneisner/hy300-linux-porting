@@ -1,0 +1,17 @@
+key 20   POWER
+key 1    VOLUME_MUTE
+key 11   VOLUME_UP
+key 88   VOLUME_DOWN
+key 92   BACK
+key 19   SETTINGS
+key 72   HOME
+key 7    DPAD_CENTER
+key 2    DPAD_DOWN
+key 3    DPAD_UP
+key 14   DPAD_LEFT
+key 26   DPAD_RIGHT
+key 130  MOUSE
+key 152  PRJ_MIRACAST
+key 147  PRJ_AIRPLAY
+key 71   PRJ_PIC_TEST
+key 9    PRJ_FACTORY_TEST

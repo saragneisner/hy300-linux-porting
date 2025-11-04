@@ -1,0 +1,72 @@
+firmware_directories /vendor/etc/firmware/
+
+/dev/ge2d                   0770    system      system
+/dev/trid_audio             0770    system      system
+/dev/decd                   0770    system      system
+/dev/mipsloader             0770    system      system
+/dev/cedar_dev              0666    media       camera
+/dev/cedar_go               0666    media       camera
+/dev/ace_dev                0666    system      system
+/dev/ump                    0777    system      graphics
+/dev/mali                   0666    system      graphics
+/dev/mali0                  0666    system      graphics
+/dev/dri/card0              0666    system      graphics
+/dev/dri/controlD64         0666    system      graphics
+/dev/dri/renderD128         0666    system      graphics
+/dev/pvr_sync               0666    system      graphics
+/dev/video*                 0777    camera      camera
+/dev/media*                 0777    camera      camera
+/dev/v4l-subdev*            0777    camera      camera
+/dev/ttyUSB0                0777    system      system
+/dev/ttyUSB1                0777    system      system
+/dev/ttyUSB2                0777    system      system
+/dev/ttyUSB3                0777    system      system
+/dev/ttyACM0                0777    system      system
+/dev/ttyACM1                0777    system      system
+/dev/ttyACM2                0777    system      system
+/dev/gps                    0777    system      system
+/dev/pa_dev                 0777    system      system
+/dev/sunxi_mem              0666    media       media
+/dev/g2d                    0660    system      graphics
+/dev/syncfence              0660    system      graphics
+/dev/fd_dev                 0660    media       media
+/dev/sr0                    0777    system      system
+/dev/ion                    0777    system      graphics
+/dev/transform              0660    system       system
+/dev/pvrsrvkm               0666    root        root
+/dev/pvr_sync               0666    system      graphics
+/dev/block/by-name/misc     0660    system      root
+/dev/block/by-name/frp      0660    system      system
+/dev/tee0                   0776    media       mediadrm
+/dev/teepriv0               0776    media       mediadrm
+/dev/hidtvreg               0777    system      media
+/dev/sunxi_memremap         0777    system      media
+/dev/mcu_comm               0777    system      system
+/dev/input/*                0666    system      input
+/dev/sunxi_drm_heap         0777    system      graphics
+/dev/cpu_comm               0777    system      media
+/dev/i2c-2                  0777    system      system
+/dev/dtmbip                 0777    system      media
+/dev/demux                  0777    system      media
+/dev/hidtvreg               0777    system      media
+/dev/sunxi_soc_info         0660    system      mediadrm
+
+# secure storage read/write
+/dev/block/mmcblk0          0666    system      system
+
+/dev/sunxi_smc              0666    system      system
+
+# factorydata read/write
+/dev/block/mmcblk0p1        0660    system      system
+
+# sysfs properties
+/sys/devices/virtual/input/input*   accel_delay      0660  system   system
+/sys/devices/virtual/input/input*   accel_enable     0660  system   system
+/sys/devices/virtual/input/input*   gyro_enable      0660  system   system
+/sys/devices/virtual/input/input*   gyro_delay       0660  system   system
+/sys/devices/virtual/input/input*   ps_poll_delay    0660  system   system
+/sys/devices/virtual/input/input*   ls_poll_delay    0660  system   system
+/sys/devices/virtual/input/input*   calibration      0660  system   system
+/sys/devices/virtual/input/input*   offset           0660  system   system
+/sys/devices/virtual/input/input*   enable           0660  system   system
+/sys/devices/virtual/input/input*   delay            0660  system   system

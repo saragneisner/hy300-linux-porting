@@ -1,0 +1,11 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.aw.homlet.tvsystem.tvserver</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITvServer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

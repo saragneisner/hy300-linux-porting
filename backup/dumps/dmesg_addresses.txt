@@ -1,0 +1,17 @@
+[    3.945666] mali 1800000.gpu: Get gpu opp_tbale_name is 0x000a0042
+[    4.446774] F2FS-fs (mmcblk0p26): Reduce reserved blocks for root = 45219
+[    4.637866] pMemInBuffer[0]=0xc3481600 pMemInBuffer[0]->bufStart=0x43580000
+[    4.645708] pMemInBuffer[1]=0xc3481640 pMemInBuffer[1]->bufStart=0x435a0000
+[    4.653527] pMemInBuffer[2]=0xc3481680 pMemInBuffer[2]->bufStart=0x435c0000
+[    4.661347] pMemInBuffer[3]=0xc34816c0 pMemInBuffer[3]->bufStart=0x435e0000
+[    4.697686] audiobridge:247 audbrg_istream_ConfigMemMap() ISTREAM1 phy_addr=0x0 vir_addr=0xf1358000
+[    4.707812] audiobridge:258 audbrg_istream_ConfigMemMap() ISTREAM2 phy_addr=0x10000 vir_addr=0xf1368000
+[    4.718295] audiobridge:269 audbrg_istream_ConfigMemMap() ISTREAM3 phy_addr=0x20000 vir_addr=0xf1378000
+[    4.728777] audiobridge:280 audbrg_istream_ConfigMemMap() ISTREAM4 phy_addr=0x30000 vir_addr=0xf1388000
+[    4.739267] audiobridge:155 audbrg_ostream_ConfigMemMap() OSTREAM1 phy_addr=0x40000 vir_addr=0xf1398000
+[    4.749749] audiobridge:166 audbrg_ostream_ConfigMemMap() OSTREAM2 phy_addr=0x50000 vir_addr=0xf13a8000
+[    4.760231] audiobridge:232 audbrg_delayline_ConfigMemMap() DELAYLINE1 phy_addr=0x60000 vir_addr=0xf13b8000
+[    4.771102] audiobridge:246 audbrg_delayline_ConfigMemMap() DELAYLINE2 phy_addr=0xa0000 vir_addr=0xf13f8000
+[    4.781975] audiobridge:260 audbrg_delayline_ConfigMemMap() DELAYLINE3 phy_addr=0xe0000 vir_addr=0xf1438000
+[    4.792849] audiobridge:274 audbrg_delayline_ConfigMemMap() DELAYLINE4 phy_addr=0x120000 vir_addr=0xf1478000
+[    9.334519] pinctrl_get for allwinner,sunxi-pwm fail

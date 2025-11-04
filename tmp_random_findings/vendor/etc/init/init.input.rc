@@ -1,0 +1,38 @@
+on post-fs
+    ### Fan & Thermal
+    insmod /vendor/lib/modules/pwm-fan.ko
+    write /sys/devices/platform/fan0/hwmon/hwmon2/pwm1 255
+    write /sys/devices/platform/fan1/hwmon/hwmon3/pwm1 255
+    insmod /vendor/lib/modules/mux-core.ko
+    insmod /vendor/lib/modules/mux-gpio.ko
+    insmod /vendor/lib/modules/iio-mux.ko
+    insmod /vendor/lib/modules/thermal-generic-adc.ko
+    write /sys/class/thermal/thermal_zone2/policy "step_wise"
+
+on property:sys.boot_completed=1
+    ### sensor modules
+    insmod /vendor/lib/modules/kxtj3.ko
+    ### Motor
+    insmod /vendor/lib/modules/motor-control.ko
+    chmod 777 /dev/motor0
+    chown system system /dev/motor0
+    insmod /vendor/lib/modules/motor-limiter.ko
+    chmod 777 /dev/motor_limiter
+    chown system system/dev/motor_limiter
+    chmod 777 /sys/class/hwmon/hwmon2/fan1_input
+    chown system system /sys/class/hwmon/hwmon2/fan1_input
+    chmod 777 /sys/class/hwmon/hwmon3/fan1_input
+    chown system system /sys/class/hwmon/hwmon3/fan1_input
+    chmod 777 /sys/class/hwmon/hwmon2/pwm1
+    chown system system /sys/class/hwmon/hwmon2/pwm1
+    chmod 777 /sys/class/hwmon/hwmon3/pwm1
+    chown system system /sys/class/hwmon/hwmon3/pwm1
+    ### gpio key
+    insmod /vendor/lib/modules/gpio_keys.ko
+    chmod 666 /sys/devices/platform/motor_ctr/motor_ctrl
+    chown system system /sys/devices/platform/motor_ctr/motor_ctrl
+    chown system system /sys/devices/platform/motor_ctr/motor_limit
+	
+    insmod /vendor/lib/modules/pwm_fan.ko
+    chmod 666 /sys/devices/platform/speedlevel
+    chown system system /sys/devices/platform/fan/speedlevel

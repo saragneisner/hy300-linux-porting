@@ -1,0 +1,4 @@
+# Auto-generated
+# date: Mon Sep 22 09:34:27 CST 2025
+on init
+    setprop bluetooth.enable_timeout_ms 8000

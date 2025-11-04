@@ -1,0 +1,31 @@
+<config_setting>
+	<save_current_data value = "true"/>
+	<ui_use brightness="1" contrast="1" saturation="1" hue="1" sharpness="1" backlight="1"
+            colortemperature="1" gamma="1"
+            tnr="1" snr="1" dynamic_backlight="1"
+            dci="1" blackextenstion="1"/>
+
+	<default brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100"
+            colortemperature="0" gamma="1"
+            tnr="0" snr="0" dynamic_backlight="0"
+            dci="1" blackextenstion="0" smart_picture_mode="1"
+            overscan_enable="1" video_range_mode="0" cvbs_pedestal_mode="1"
+        />
+
+	<has_detail_preset_mode value="true"/>
+			
+	<preset_mode_use brightness="1" contrast="1" saturation="1" hue="1" sharpness="1" backlight="1"
+            colortemperature="1" gamma="1"
+            tnr="1" snr="1" dynamic_backlight="1"
+            dci="1" blackextenstion="1"/>
+
+	<transform>
+		<item
+			name="gamma"
+			level0="1.8"
+			level1="2.0"
+			level2="2.1"
+			level3="2.2"
+            level4="2.4"/>
+	</transform>
+</config_setting>

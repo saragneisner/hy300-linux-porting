@@ -1,0 +1,20 @@
+key 29   POWER
+key 02   VOLUME_MUTE
+key 09   DPAD_UP
+key 08   DPAD_RIGHT
+key 01   DPAD_DOWN
+key 10   DPAD_LEFT
+key 11   DPAD_CENTER
+key 31   BACK
+key 30   MENU
+key 21   VOLUME_UP
+key 17   VOLUME_DOWN
+#key 220   MOUSE
+key 13   HOME
+#key 245   MENU
+key 69   MOUSE
+key 102  PRJ_BRC_PAIR
+key 80   EXPLORER
+key 81   SETTINGS
+
+

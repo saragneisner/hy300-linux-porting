@@ -1,0 +1,84 @@
+debug: false
+limit: 12
+threadCheck: true
+memoryCheck: true
+memoryLimit: 450,0
+memoryTrim: false
+skipService: false
+blockBroadcast: false
+lmk: false
+lmk_level: 100,150,250
+lmk_adj: 99,200,600
+
+whitelist:
+android
+com.hotack
+com.android
+com.android.phone
+com.android.server.telecom
+com.google
+com.softwinner
+com.clock
+com.pt1
+com.wandoujia.phoenix2.usbproxy
+com.antutu.ABenchMark
+com.into.stability
+com.quicinc.vellamo
+com.hp.android
+com.tencent.mobileqq
+com.baidu.input
+com.sohu.inputmethod.sogou
+com.allwinnertech
+com.xy.forqa
+com.hysd.vafocus
+com.qiyivideo.sibichi
+com.dangbeimarket
+com.ecloud.emedia
+com.ecloud.eshare.server
+com.eshare.linedisplay.receiver
+com.htc.closedialog
+com.ecloud.eairplay
+com.allshare.edisplay.idisp
+com.htc.htcbluetoothremotecontrol
+com.htc.htcsetup_wizard_d55
+com.zeasn.whale.saas
+zeasn.open.technical.tv.store
+com.peasun.aispeech
+com.google.android.youtube.tv
+com.gsk.xirivoice.plugin
+com.gsk.xirivoice.pm
+com.bestv.ott
+com.aispeech.tvui
+tv.fun.tvupgrade
+tv.fun.sdkmanager
+com.htc.hyk_test
+com.htc.hyk_pcba
+com.android.toofifi
+com.toofifi.lineserver
+com.mphotool.airplay
+com.mphotool.dlna
+com.mphotool.usbcastserver
+com.google.android.katniss
+com.google.android.tv.remote.service
+com.htc.spectraos
+com.htc.magcubicos
+com.htc.luminaos
+com.jh.gamehub
+com.androidemu.snes
+com.vrt.vpsp
+com.androidemu.psx
+com.androidemu.nes
+com.vrt.vn64
+com.androidemu.gens
+com.androidemu.gbc
+com.moba.gba
+com.vrt.varc
+com.vrt.test
+com.nj.boxui
+
+action:
+android.service.wallpaper.WallpaperService
+com.android.cts.verifier.camera.its.START
+android.bluetooth.auto.connect
+com.htc.manualfocus
+com.gsk.xirivoice.exer

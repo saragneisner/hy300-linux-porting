@@ -1,0 +1,6 @@
+#line 1 "device/softwinner/common/sepolicy/vendor/service_contexts"
+vendor.display.output.IDisplayOutputManager/default u:object_r:hal_awdisplayoutput_service:s0
+#line 1 "system/sepolicy/reqd_mask/service_contexts"
+# empty service_contexts file - this file is used to generate an empty
+# non-platform service_context for devices without any service_contexts
+# customizations.

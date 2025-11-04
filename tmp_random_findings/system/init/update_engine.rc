@@ -1,0 +1,16 @@
+service update_engine /system/bin/update_engine --logtostderr --logtofile --foreground
+    class late_start
+    user root
+    group root system wakelock inet cache media_rw
+    writepid /dev/cpuset/system-background/tasks /dev/blkio/background/tasks
+    disabled
+
+on property:ro.boot.slot_suffix=*
+    enable update_engine
+
+# AW CODE:[feat] delete audio config file while ota complete.
+on property:ota.complete_ota_update=true
+    rm /data/vendor/tvconfig/audio_config.ini
+    rm /data/vendor/tvconfig/pq_factory_extern.ini
+    rm /data/vendor/tvconfig/tvfactorypq.db
+

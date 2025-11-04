@@ -1,0 +1,40 @@
+/vendor/lib/modules/logger.ko:
+/vendor/lib/modules/snd_alsa_trid.ko:
+/vendor/lib/modules/mali_kbase.ko:
+/vendor/lib/modules/hall_sensor.ko:
+/vendor/lib/modules/88x2cu.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/vs_io_helper.ko:
+/vendor/lib/modules/dma-buf-test-exporter.ko:
+/vendor/lib/modules/uwe5622_bsp_sdio.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/stk3x1x.ko: /vendor/lib/modules/init-input.ko
+/vendor/lib/modules/sunxi_dtmbip.ko:
+/vendor/lib/modules/bufmem_dev.ko:
+/vendor/lib/modules/sprdbt_tty.ko: /vendor/lib/modules/uwe5622_bsp_sdio.ko /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/8723du.ko:
+/vendor/lib/modules/xradio_btlpm.ko:
+/vendor/lib/modules/aic8800_btlpm.ko:
+/vendor/lib/modules/tvutils.ko:
+/vendor/lib/modules/ci_dev.ko: /vendor/lib/modules/vs_io_helper.ko
+/vendor/lib/modules/gslX680new.ko: /vendor/lib/modules/init-input.ko
+/vendor/lib/modules/vf-test.ko:
+/vendor/lib/modules/8188fu.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/rtk_btusb.ko:
+/vendor/lib/modules/atbm602x_wifi_usb.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/demux_dev.ko: /vendor/lib/modules/vs_io_helper.ko
+/vendor/lib/modules/aic8800_fdrv.ko: /vendor/lib/modules/aic8800_bsp.ko /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/aic8800_bsp.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/cpu_comm_dev.ko: /vendor/lib/modules/vs_io_helper.ko
+/vendor/lib/modules/incrementalfs.ko:
+/vendor/lib/modules/decd.ko:
+/vendor/lib/modules/hidtvreg_dev.ko:
+/vendor/lib/modules/mcu_comm_dev.ko:
+/vendor/lib/modules/xr819.ko: /vendor/lib/modules/wireless_switch.ko /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/ge2d_dev.ko: /vendor/lib/modules/vs_io_helper.ko
+/vendor/lib/modules/rtl_btlpm.ko:
+/vendor/lib/modules/xvatouch.ko:
+/vendor/lib/modules/sunxi_rfkill.ko:
+/vendor/lib/modules/init-input.ko:
+/vendor/lib/modules/gspca_main.ko:
+/vendor/lib/modules/88x2bs.ko: /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/sprdwl_ng.ko: /vendor/lib/modules/uwe5622_bsp_sdio.ko /vendor/lib/modules/sunxi_rfkill.ko
+/vendor/lib/modules/wireless_switch.ko: /vendor/lib/modules/sunxi_rfkill.ko

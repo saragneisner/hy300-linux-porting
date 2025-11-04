@@ -1,0 +1,8 @@
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 boot_a.img
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 boot_b.img
+-rw-r--r-- 1 luca luca 549 Nov  4 01:12 checksums.sha256
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 metadata.img
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 system_a.img
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 system_b.img
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 vendor_a.img
+-rw-r--r-- 1 luca luca   0 Nov  4 01:12 vendor_b.img

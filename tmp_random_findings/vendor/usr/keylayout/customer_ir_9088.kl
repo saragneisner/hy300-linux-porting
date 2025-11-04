@@ -1,0 +1,31 @@
+key 74   BACK
+key 70   MENU
+key 87   DPAD_CENTER
+key 80   DPAD_DOWN
+key 86   DPAD_UP
+key 71   DPAD_LEFT
+key 75   DPAD_RIGHT
+key 68   VOLUME_UP
+key 69   VOLUME_DOWN
+key 1   POWER
+key 16    0
+key 2    1
+key 18    2
+key 6    3
+key 22    4
+key 3    5
+key 19    6
+key 7    7
+key 23    8
+key 0    9
+key 17   VOLUME_MUTE
+key 5  INFO
+key 72  CHANNEL_UP
+key 73  CHANNEL_DOWN
+key 64 TV_INPUT
+key 24 FACAPI_CVTE_MENU_SHOW
+key 89   HOME
+key 11   FACAPI_CVTE_AGING
+key 20   DOT
+
+

@@ -1,0 +1,10 @@
+<custom_setting>
+    <current_source_type tvin="4"/>
+    <current_data cvbs_pedestal_mode="1" brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100" colortemperature="0" gamma="3" tnr="2" snr="1" dci="2" blackextenstion="1" dynamic_backlight="0" device_mode="0"/>
+    <current_mode mode_videodec="standard" mode_hdmi1="standard" mode_hdmi2="standard" mode_cvbs="standard"/>
+    <system_mode name="INVALID"/>
+    <custom_videodec brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100" colortemperature="0" gamma="3" tnr="2" snr="1" dci="2" blackextenstion="1" dynamic_backlight="0" device_mode="0"/>
+	<custom_hdmi1 brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100" colortemperature="0" gamma="3" tnr="2" snr="1" dci="2" blackextenstion="1" dynamic_backlight="0" device_mode="0"/>
+	<custom_hdmi2 brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100" colortemperature="0" gamma="3" tnr="2" snr="1" dci="2" blackextenstion="1" dynamic_backlight="0" device_mode="0"/>
+	<custom_cvbs brightness="50" contrast="50" saturation="50" hue="50" sharpness="50" backlight="100" colortemperature="0" gamma="3" tnr="2" snr="1" dci="2" blackextenstion="1" dynamic_backlight="0" device_mode="0"/>
+</custom_setting>

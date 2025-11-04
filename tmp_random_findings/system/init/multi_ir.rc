@@ -1,0 +1,9 @@
+service multi_ir /system/bin/multi_ir
+    class main
+    user root
+    group system input uhid
+    seclabel u:r:multi_ir:s0
+
+on boot
+    stop multi_ir_vendor
+

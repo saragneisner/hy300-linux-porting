@@ -1,0 +1,678 @@
+#!/usr/bin/env bash
+# Task Management Tool for HY300 Linux Porting Project
+
+set -euo pipefail
+
+# Find project root by looking for tasks directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+TASKS_DIR="$PROJECT_ROOT/tasks"
+COMPLETED_DIR="$TASKS_DIR/completed"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+
+usage() {
+    cat << EOF
+Task Management Tool for HY300 Linux Porting Project
+
+Usage: $0 <command> [options]
+
+Commands:
+    list                    List all tasks with status
+    active                  Show in_progress and pending tasks
+    next                    Find next priority task to work on
+    create <name>           Create new task file
+    start <task_id>         Mark task as in_progress
+    complete <task_id>      Mark task as completed and move to completed/ + mark in README
+    block <task_id> <reason> Mark task as blocked with reason
+    status <task_id>        Show task status and details
+    find-inprogress        Find any in_progress tasks
+    validate               Validate all task files
+    import-phase <phase>    Auto-import all tasks from phase README
+    
+    Examples: import-phase phase1, import-phase phase2
+
+Examples:
+    $0 list
+    $0 next
+    $0 create "extract-dram-parameters"
+    $0 start 002
+    $0 complete 001
+    $0 block 003 "Waiting for hardware access"
+    $0 import-phase phase1
+EOF
+}
+
+# Parse task file for status and metadata
+parse_task() {
+    local task_file="$1"
+    local task_name=$(basename "$task_file" .md)
+    
+    if [[ ! -f "$task_file" ]]; then
+        echo "Task file not found: $task_file" >&2
+        return 1
+    fi
+    
+    local status=$(grep -i "^**Status:" "$task_file" | head -1 | sed 's/.*Status:\*\*[[:space:]]*//' | sed 's/[[:space:]]*$//')
+    local priority=$(grep -i "^**Priority:" "$task_file" | head -1 | sed 's/.*Priority:\*\*[[:space:]]*//' | sed 's/[[:space:]]*$//')
+    
+    # Clean up status (remove emojis and extra text)
+    status=$(echo "$status" | sed 's/✅[[:space:]]*//' | sed 's/🔄[[:space:]]*//' | sed 's/⏳[[:space:]]*//' | sed 's/❌[[:space:]]*//')
+    status=$(echo "$status" | tr '[:upper:]' '[:lower:]' | sed 's/[[:space:]]*$//')
+    
+    echo "$task_name|$status|$priority"
+}
+
+# List all tasks
+list_tasks() {
+    echo -e "${BLUE}HY300 Linux Porting - Task Status${NC}"
+    echo "=================================="
+    echo
+    
+    # Active tasks
+    if [[ -d "$TASKS_DIR" ]]; then
+        for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local status=$(echo "$info" | cut -d'|' -f2)
+            local priority=$(echo "$info" | cut -d'|' -f3)
+            
+            case "$status" in
+                *in_progress*|*in-progress*)
+                    echo -e "${YELLOW}🔄 $task_name${NC} [$priority] - IN PROGRESS"
+                    ;;
+                *pending*)
+                    echo -e "${BLUE}⏳ $task_name${NC} [$priority] - PENDING"
+                    ;;
+                *blocked*)
+                    echo -e "${RED}❌ $task_name${NC} [$priority] - BLOCKED"
+                    ;;
+                *)
+                    echo -e "📋 $task_name [$priority] - $status"
+                    ;;
+            esac
+        done
+    fi
+    
+    echo
+    echo -e "${GREEN}Completed Tasks:${NC}"
+    
+    # Completed tasks
+    if [[ -d "$COMPLETED_DIR" ]]; then
+        for task_file in "$COMPLETED_DIR"/*/*.md "$COMPLETED_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local priority=$(echo "$info" | cut -d'|' -f3)
+            
+            echo -e "${GREEN}✅ $task_name${NC} [$priority] - COMPLETED"
+        done
+    fi
+}
+
+# Show only active tasks
+active_tasks() {
+    echo -e "${BLUE}Active Tasks (In Progress + Pending)${NC}"
+    echo "===================================="
+    echo
+    
+    local found=false
+    
+    if [[ -d "$TASKS_DIR" ]]; then
+        for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local status=$(echo "$info" | cut -d'|' -f2)
+            local priority=$(echo "$info" | cut -d'|' -f3)
+            
+            case "$status" in
+                *in_progress*|*in-progress*)
+                    echo -e "${YELLOW}🔄 $task_name${NC} [$priority] - IN PROGRESS"
+                    found=true
+                    ;;
+                *pending*)
+                    echo -e "${BLUE}⏳ $task_name${NC} [$priority] - PENDING"
+                    found=true
+                    ;;
+                *blocked*)
+                    echo -e "${RED}❌ $task_name${NC} [$priority] - BLOCKED"
+                    found=true
+                    ;;
+            esac
+        done
+    fi
+    
+    if [[ "$found" == false ]]; then
+        echo "No active tasks found."
+        echo "Create a new task or check completed tasks."
+    fi
+}
+
+# Find next priority task
+next_task() {
+    echo -e "${BLUE}Finding next priority task...${NC}"
+    echo
+    
+    # First check for in_progress tasks
+    local inprogress_task=""
+    if [[ -d "$TASKS_DIR" ]]; then
+        for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local status=$(echo "$info" | cut -d'|' -f2)
+            
+            if [[ "$status" == *"in_progress"* || "$status" == *"in-progress"* ]]; then
+                inprogress_task="$task_name"
+                break
+            fi
+        done
+    fi
+    
+    if [[ -n "$inprogress_task" ]]; then
+        echo -e "${YELLOW}⚠️  Continue working on IN PROGRESS task:${NC}"
+        echo -e "${YELLOW}🔄 $inprogress_task${NC}"
+        echo
+        echo "Complete this task before starting a new one."
+        return 0
+    fi
+    
+    # Find highest priority pending task
+    local next_pending=""
+    local next_priority=""
+    
+    if [[ -d "$TASKS_DIR" ]]; then
+        for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local status=$(echo "$info" | cut -d'|' -f2)
+            local priority=$(echo "$info" | cut -d'|' -f3)
+            
+            if [[ "$status" == *"pending"* ]]; then
+                if [[ "$priority" == *"critical"* || "$priority" == *"CRITICAL"* ]]; then
+                    next_pending="$task_name"
+                    next_priority="CRITICAL"
+                    break
+                elif [[ "$priority" == *"high"* ]]; then
+                    next_pending="$task_name"
+                    next_priority="high"
+                    break
+                elif [[ "$priority" == *"medium"* && "$next_priority" != "high" && "$next_priority" != "CRITICAL" ]]; then
+                    next_pending="$task_name"
+                    next_priority="medium"
+                elif [[ -z "$next_pending" ]]; then
+                    next_pending="$task_name"
+                    next_priority="$priority"
+                fi
+            fi
+        done
+    fi
+    
+    if [[ -n "$next_pending" ]]; then
+        echo -e "${GREEN}📋 Next recommended task:${NC}"
+        echo -e "${BLUE}⏳ $next_pending${NC} [$next_priority]"
+        echo
+        echo "Start this task with: $0 start $next_pending"
+    else
+        echo "No pending tasks found."
+        echo "All tasks may be completed or blocked."
+        echo "Consider creating a new task."
+    fi
+}
+
+# Find in-progress tasks
+find_inprogress() {
+    local found=false
+    
+    if [[ -d "$TASKS_DIR" ]]; then
+        for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md; do
+            [[ -f "$task_file" ]] || continue
+            
+            local info=$(parse_task "$task_file")
+            local task_name=$(echo "$info" | cut -d'|' -f1)
+            local status=$(echo "$info" | cut -d'|' -f2)
+            
+            if [[ "$status" == *"in_progress"* || "$status" == *"in-progress"* ]]; then
+                echo "$task_name"
+                found=true
+            fi
+        done
+    fi
+    
+    if [[ "$found" == false ]]; then
+        return 1
+    fi
+}
+
+# Create new task
+create_task() {
+    local task_name="$1"
+    local task_number=""
+    
+    # Generate task number
+    local max_num=0
+    for task_file in "$TASKS_DIR"/*.md "$COMPLETED_DIR"/*.md; do
+        [[ -f "$task_file" ]] || continue
+        local num=$(basename "$task_file" .md | grep -o '^[0-9]\+' || echo "0")
+        if (( num > max_num )); then
+            max_num=$num
+        fi
+    done
+    
+    task_number=$(printf "%03d" $((max_num + 1)))
+    local filename="${task_number}-${task_name}.md"
+    local filepath="$TASKS_DIR/$filename"
+    
+    cat > "$filepath" << EOF
+# Task ${task_number}: ${task_name}
+
+**Status:** pending  
+**Priority:** medium  
+**Phase:** II - U-Boot Porting  
+**Assigned:** AI Agent  
+**Created:** $(date +%Y-%m-%d)  
+**Context:** Related context files
+
+## Objective
+
+[Describe the main goal of this task]
+
+## Prerequisites
+
+- [ ] [List prerequisites]
+
+## Acceptance Criteria
+
+- [ ] [Define success criteria]
+- [ ] [Each criteria should be testable]
+- [ ] [No shortcuts or mocking allowed]
+
+## Implementation Steps
+
+### 1. [Step Name]
+[Detailed implementation steps]
+
+### 2. [Step Name]  
+[More steps as needed]
+
+## Quality Validation
+
+- [ ] [Testing requirements]
+- [ ] [Documentation updates]
+- [ ] [Code compilation verification]
+
+## Next Task Dependencies
+
+[What tasks depend on this completion]
+
+## Notes
+
+[Additional notes, blockers, or considerations]
+EOF
+    
+    echo -e "${GREEN}✅ Created task: $filename${NC}"
+    echo "Edit the task file to add details: $filepath"
+}
+
+# Update task status
+update_status() {
+    local task_id="$1"
+    local new_status="$2"
+    local reason="${3:-}"
+    
+    # Find task file (search in pending, in-progress, and root directories)
+    local task_file=""
+    for file in "$TASKS_DIR"/*"$task_id"*.md "$TASKS_DIR"/pending/*"$task_id"*.md "$TASKS_DIR"/in-progress/*"$task_id"*.md "$TASKS_DIR"/completed/*"$task_id"*.md; do
+        if [[ -f "$file" ]]; then
+            task_file="$file"
+            break
+        fi
+    done
+    
+    if [[ -z "$task_file" ]]; then
+        echo "Task not found: $task_id" >&2
+        return 1
+    fi
+    
+    # Update status in file
+    sed -i "s/\*\*Status:\*\*[[:space:]]*[^[:space:]]*/\*\*Status:\*\* $new_status/" "$task_file"
+    
+    if [[ -n "$reason" ]]; then
+        # Add reason to notes section
+        echo "" >> "$task_file"
+        echo "**Blocked Reason:** $reason" >> "$task_file"
+    fi
+    
+    echo -e "${GREEN}✅ Updated task status: $new_status${NC}"
+    
+    # If completing, move to completed directory and update phase README
+    if [[ "$new_status" == "completed" ]]; then
+        local filename=$(basename "$task_file")
+        mkdir -p "$COMPLETED_DIR"
+        mv "$task_file" "$COMPLETED_DIR/"
+        echo -e "${GREEN}📁 Moved to completed: $filename${NC}"
+        
+        # Update phase README if this task belongs to a phase
+        update_phase_readme "$task_id" "$COMPLETED_DIR/$filename"
+    elif [[ "$new_status" == "in_progress" ]]; then
+        # If starting, move to in-progress directory
+        local filename=$(basename "$task_file")
+        if [[ "$task_file" != "$TASKS_DIR/in-progress/"* ]]; then
+            mkdir -p "$TASKS_DIR/in-progress"
+            mv "$task_file" "$TASKS_DIR/in-progress/"
+            echo -e "${GREEN}📁 Moved to in-progress: $filename${NC}"
+        fi
+    fi
+}
+
+# Validate task files
+validate_tasks() {
+    echo -e "${BLUE}Validating task files...${NC}"
+    local errors=0
+    
+    for task_file in "$TASKS_DIR"/*/*.md "$TASKS_DIR"/*.md "$COMPLETED_DIR"/*/*.md "$COMPLETED_DIR"/*.md; do
+        [[ -f "$task_file" ]] || continue
+        
+        local filename=$(basename "$task_file")
+        
+        # Check required fields
+        if ! grep -q "^**Status:" "$task_file"; then
+            echo -e "${RED}❌ Missing Status field: $filename${NC}"
+            ((errors++))
+        fi
+        
+        if ! grep -q "^**Priority:" "$task_file"; then
+            echo -e "${RED}❌ Missing Priority field: $filename${NC}"
+            ((errors++))
+        fi
+        
+        if ! grep -q "## Objective" "$task_file"; then
+            echo -e "${RED}❌ Missing Objective section: $filename${NC}"
+            ((errors++))
+        fi
+        
+        if ! grep -q "## Acceptance Criteria" "$task_file"; then
+            echo -e "${RED}❌ Missing Acceptance Criteria: $filename${NC}"
+            ((errors++))
+        fi
+    done
+    
+    if (( errors == 0 )); then
+        echo -e "${GREEN}✅ All task files are valid${NC}"
+    else
+        echo -e "${RED}❌ Found $errors validation errors${NC}"
+        return 1
+    fi
+}
+
+# Import tasks from phase README
+import_phase_tasks() {
+    local phase_input="$1"
+    local phase_dir=""
+    local readme_file=""
+    
+    # Try exact match first
+    if [[ -d "$PROJECT_ROOT/phases/$phase_input" && -f "$PROJECT_ROOT/phases/$phase_input/README.md" ]]; then
+        phase_dir="$PROJECT_ROOT/phases/$phase_input"
+        readme_file="$phase_dir/README.md"
+    else
+        # Try with wildcards (phase1 -> phase1-*)
+        local match_count=0
+        for dir in "$PROJECT_ROOT/phases/${phase_input}"*; do
+            if [[ -d "$dir" && -f "$dir/README.md" ]]; then
+                phase_dir="$dir"
+                readme_file="$dir/README.md"
+                match_count=$((match_count + 1))
+            fi
+        done
+        
+        if (( match_count > 1 )); then
+            echo -e "${RED}❌ Multiple phases match '$phase_input'${NC}"
+            echo "Found:"
+            for dir in "$PROJECT_ROOT/phases/${phase_input}"*; do
+                [[ -d "$dir" ]] && echo "  - $(basename "$dir")"
+            done
+            return 1
+        fi
+    fi
+    
+    if [[ -z "$phase_dir" || ! -f "$readme_file" ]]; then
+        echo -e "${RED}❌ README not found for phase: $phase_input${NC}"
+        echo "Looked in: $PROJECT_ROOT/phases/$phase_input or $PROJECT_ROOT/phases/${phase_input}*"
+        return 1
+    fi
+    
+    echo -e "${BLUE}Importing tasks from: $readme_file${NC}"
+    echo
+    
+    local task_count=0
+    local imported=0
+    
+    # Extract tasks from README (looking for "### Task NNN:" patterns)
+    while IFS= read -r line; do
+        # Check if line matches "### Task NNN: Title"
+        if [[ "$line" =~ ^###\ Task\ [0-9]+:\ (.+)$ ]]; then
+            # Extract task number and title
+            local task_num=$(echo "$line" | sed -n 's/^### Task \([0-9]\+\):.*/\1/p')
+            local task_title=$(echo "$line" | sed -n 's/^### Task [0-9]\+:[[:space:]]*\(.*\)/\1/p')
+            
+            ((task_count++))
+            
+            # Check if task file already exists
+            local existing_file=""
+            for file in "$TASKS_DIR"/*"$task_num"*.md "$COMPLETED_DIR"/*"$task_num"*.md; do
+                if [[ -f "$file" ]]; then
+                    existing_file="$file"
+                    break
+                fi
+            done
+            
+            if [[ -n "$existing_file" ]]; then
+                echo -e "${YELLOW}⏭️  Task $task_num already exists: $(basename "$existing_file")${NC}"
+                continue
+            fi
+            
+            # Create simple filename from task number and title
+            local clean_title=$(echo "$task_title" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/-$//')
+            local filename=$(printf "%03d" "$task_num")-$clean_title.md
+            local filepath="$TASKS_DIR/$filename"
+            
+            # Extract status and priority from next few lines (read from README context)
+            local task_status="pending"
+            local task_priority="medium"
+            
+            cat > "$filepath" << EOF
+# Task $task_num: $task_title
+
+**Status:** $task_status
+**Priority:** $task_priority
+**Phase:** $(basename "$phase_dir")
+**Created:** $(date +%Y-%m-%d)
+
+## Imported from
+
+Phase README: $(basename "$phase_dir")/README.md
+
+## Objective
+
+See phase README Task $task_num for detailed task description.
+
+## Next Steps
+
+- [ ] Review this task in the phase README
+- [ ] Update this file with implementation details
+- [ ] Mark as in_progress when starting work
+
+## Notes
+
+Auto-imported from phase README.
+EOF
+            
+            echo -e "${GREEN}✅ Imported: Task $task_num - $task_title${NC}"
+            ((imported++))
+        fi
+    done < "$readme_file"
+    
+    echo
+    echo -e "${GREEN}Import Summary:${NC}"
+    echo "Found: $task_count tasks"
+    echo "Imported: $imported new tasks"
+    echo
+    echo "View imported tasks with: $0 list"
+}
+
+# Update phase README when task is completed
+update_phase_readme() {
+    local task_id="$1"
+    local task_file="$2"
+    
+    # Try to find which phase this task belongs to
+    local phase_match=$(grep -i "^**Phase:" "$task_file" 2>/dev/null | head -1 | sed 's/.*Phase:[[:space:]]*//' | sed 's/[[:space:]]*$//')
+    
+    if [[ -z "$phase_match" ]]; then
+        # If no phase found in task file, try to infer from directory
+        if [[ "$task_file" == *"phase1"* ]]; then
+            phase_match="phase1"
+        elif [[ "$task_file" == *"phase2"* ]]; then
+            phase_match="phase2"
+        fi
+    fi
+    
+    if [[ -z "$phase_match" ]]; then
+        return 0  # Not part of a structured phase, skip
+    fi
+    
+    # Find the phase README
+    local phase_dir=""
+    for dir in "$PROJECT_ROOT/phases/$phase_match"*; do
+        if [[ -d "$dir" && -f "$dir/README.md" ]]; then
+            phase_dir="$dir"
+            break
+        fi
+    done
+    
+    if [[ ! -f "$phase_dir/README.md" ]]; then
+        return 0  # Phase README not found, skip
+    fi
+    
+    # Update the README: mark task as completed
+    local task_num=$(printf "%03d" "$task_id")
+    
+    # Use a temporary file for the replacement
+    local temp_file=$(mktemp)
+    
+    # Replace "**Status:** pending" with "**Status:** completed" for this specific task
+    awk -v task="Task $task_num:" '
+    BEGIN { in_task = 0; modified = 0 }
+    /^### Task [0-9]+:/ { 
+        in_task = ($0 ~ task) ? 1 : 0
+    }
+    in_task && /^\*\*Status:\*\*/ && !/completed/ { 
+        $0 = "**Status:** completed ✅"
+        modified = 1
+    }
+    { print }
+    ' "$phase_dir/README.md" > "$temp_file"
+    
+    if grep -q "**Status:** completed ✅" "$temp_file"; then
+        mv "$temp_file" "$phase_dir/README.md"
+        echo -e "${GREEN}📝 Updated phase README: $phase_dir/README.md${NC}"
+    else
+        rm "$temp_file"
+    fi
+}
+
+# Main command handling
+case "${1:-}" in
+    list)
+        list_tasks
+        ;;
+    active)
+        active_tasks
+        ;;
+    next)
+        next_task
+        ;;
+    create)
+        if [[ -z "${2:-}" ]]; then
+            echo "Error: Task name required" >&2
+            usage
+            exit 1
+        fi
+        create_task "$2"
+        ;;
+    start)
+        if [[ -z "${2:-}" ]]; then
+            echo "Error: Task ID required" >&2
+            usage
+            exit 1
+        fi
+        update_status "$2" "in_progress"
+        ;;
+    complete)
+        if [[ -z "${2:-}" ]]; then
+            echo "Error: Task ID required" >&2
+            usage
+            exit 1
+        fi
+        update_status "$2" "completed"
+        ;;
+    block)
+        if [[ -z "${2:-}" || -z "${3:-}" ]]; then
+            echo "Error: Task ID and reason required" >&2
+            usage
+            exit 1
+        fi
+        update_status "$2" "blocked" "$3"
+        ;;
+    status)
+        if [[ -z "${2:-}" ]]; then
+            echo "Error: Task ID required" >&2
+            usage
+            exit 1
+        fi
+        task_file=""
+        for file in "$TASKS_DIR"/*"$2"*.md "$TASKS_DIR"/pending/*"$2"*.md "$TASKS_DIR"/in-progress/*"$2"*.md "$COMPLETED_DIR"/*"$2"*.md; do
+            if [[ -f "$file" ]]; then
+                cat "$file"
+                break
+            fi
+        done
+        ;;
+    find-inprogress)
+        if find_inprogress; then
+            exit 0
+        else
+            exit 1
+        fi
+        ;;
+    validate)
+        validate_tasks
+        ;;
+    import-phase)
+        if [[ -z "${2:-}" ]]; then
+            echo "Error: Phase name required (e.g., phase1, phase2)" >&2
+            usage
+            exit 1
+        fi
+        import_phase_tasks "$2"
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+esac

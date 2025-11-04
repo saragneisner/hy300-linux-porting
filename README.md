@@ -118,6 +118,9 @@ hy300-linux-porting/         # NEW ROOT
 - `ai/contexts/live-system-analysis.md` - Hardware data extraction
 - `research/docs/` - Software analysis for context
 - `research/drivers/` - Driver implementations (need hardware testing)
+- **`phases/research-validation/RESEARCH_MAPPING.md` - Hardware findings validated against UART logs** ⭐ NEW
+- **`phases/RECOVERY_TEMPLATE.md` - Standard recovery procedures for all phases** ⭐ NEW
+- **`phases/phase2-uart-access/UART_BOOTLOADER_SAFETY_PROTOCOL.md` - Safe SRAM-based bootloader testing** ⭐ NEW
 
 ## Phase Overview (8 Phases, 7-9 Weeks)
 
@@ -261,6 +264,72 @@ hy300-linux-porting/         # NEW ROOT
 - [ ] **A/B testing** on both devices successful
 - [ ] Complete documentation maintained
 - [ ] Recovery procedures validated
+
+## 🆕 Critical Engineering Enhancements (Phase II Ready)
+
+Three new comprehensive documents added to support safe development:
+
+### 1. UART Bootloader Safety Protocol
+📄 **File:** `phases/phase2-uart-access/UART_BOOTLOADER_SAFETY_PROTOCOL.md`
+
+Defines **safe bootloader testing via SRAM** without risking device modification. Includes:
+- Why SRAM loading is safer than direct flashing (zero bricking risk)
+- Complete U-Boot compilation guide for SRAM execution
+- sunxi-fel command examples with detailed explanations
+- Bootloader validation checkpoints (safety gates)
+- Issue diagnosis and recovery procedures
+- UART loading alternative methods
+- Device Tree analysis for safety
+
+**When to use:** Phase II UART validation, Phase III bootloader replacement planning
+
+---
+
+### 2. Recovery Template - Standard Procedures
+📄 **File:** `phases/RECOVERY_TEMPLATE.md`
+
+Provides **reusable recovery procedures** for all phases. Includes:
+- Failure scenarios per phase with H713-specific recovery
+- ADB connection restoration (lost connections)
+- Backup corruption detection and retry
+- UART communication troubleshooting
+- FEL mode recovery (BROM issues)
+- Device brick recovery procedures
+- A/B testing fallback strategy
+- Backup structure and decision trees
+
+**When to use:** Every phase's "Abort & Recover" section references this
+
+**Phase READMEs updated:** Phase I and Phase II now include recovery procedures
+
+---
+
+### 3. Research Hardware-Validation Mapping
+📄 **File:** `phases/research-validation/RESEARCH_MAPPING.md`
+
+Maps **100+ research findings to actual UART evidence**. Includes:
+- 10 major hardware discoveries validated against real device
+- Theory vs. reality comparison for each finding
+- Cross-references to research documents and UART logs
+- Validation status (✅ Confirmed / ⚠️ Partial / ❌ Contradicted / 🔄 Pending)
+- Implementation impact analysis for each finding
+- Integration guidance for all phases
+
+**Validated findings:**
+- GPIO voltage rails (⚠️ partial - needs measurement)
+- MIPS co-processor (✅ confirmed - safe to implement)
+- AV1 decoder hardware (✅ confirmed - Phase V ready)
+- AIC8800 WiFi/Bluetooth (✅ confirmed - community drivers)
+- Display TCON0 (✅ confirmed - driver needed)
+- IR remote control (✅ confirmed - simple GPIO driver)
+- Motor/PWM control (✅ confirmed - daemon needed)
+- Storage eMMC + SPI-NOR (✅ confirmed - safe layout)
+- 2GB DDR3 memory (✅ confirmed - no changes needed)
+- Thermal sensor (✅ confirmed - mainline support)
+
+**When to use:** Before implementing any hardware feature, consult this mapping
+
+---
 
 ## Risk Mitigation
 

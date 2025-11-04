@@ -1,0 +1,20 @@
+{
+    "DisplayEngineVersion": 99,
+    "DisplayNumber": 1,
+
+    /* Primary display */
+    "Display0": {
+        "InterfaceType": "LCD",
+        "DisplayEnginePortId": 0,
+        "OverrideFramebufferSize": 0,
+        "FramebufferWidth": 640,
+        "FramebufferHeight": 360,
+        "DpiX": 122,
+        "DpiY": 122,
+        "HotplugSupported": 0,
+        "AfbcSupported": 0,
+        "HardwareRotateSupported": 0,
+        "BandwidthLimited": 0,
+        "DefaultOutputMode": 0
+    }
+}

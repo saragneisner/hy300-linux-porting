@@ -1,0 +1,5 @@
+service multi_ir_vendor /vendor/bin/multi_ir_vendor
+        class main
+        user root
+        group system input uhid
+        seclabel u:r:multi_ir_vendor:s0

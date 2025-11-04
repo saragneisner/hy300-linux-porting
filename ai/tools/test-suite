@@ -13,8 +13,6 @@ NC='\033[0m' # No Color
 TOOLS_DIR="ai/tools"
 TEST_DIR="ai/tests"
 
-mkdir -p "$TEST_DIR"
-
 echo -e "${BLUE}🧪 AI Tools Test Suite${NC}"
 echo "======================="
 echo

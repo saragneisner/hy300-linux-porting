@@ -1,0 +1,11 @@
+on late-fs
+    ### tv_input module
+    insmod /vendor/lib/modules/hidtvreg_dev.ko
+    insmod /vendor/lib/modules/cpu_comm_dev.ko
+    insmod /vendor/lib/modules/demux_dev.ko
+    insmod /vendor/lib/modules/mcu_comm_dev.ko
+    insmod /vendor/lib/modules/snd_alsa_trid.ko
+    setprop sys.svp_drvload_done 1
+    ### CVBS1 Detect
+    ###write /sys/class/gpio/export "229"
+    ###write /sys/class/gpio/gpio229/direction "in"

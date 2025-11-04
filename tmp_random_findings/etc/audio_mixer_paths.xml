@@ -1,0 +1,46 @@
+<mixer>
+    <!-- These are the initial mixer settings -->
+
+  <path name="media-speaker-apb">
+      <ctl name="DAC Src Select" value="APB" />
+      <ctl name="Headphone" value="On" />
+      <ctl name="Speaker" value="On" />
+      <ctl name="Speaker Volume" value="26" />
+  </path>
+
+  <path name="media-speaker-i2s">
+      <ctl name="DAC Src Select" value="I2S" />
+      <ctl name="Speaker" value="On" />
+      <ctl name="Headphone" value="On" />
+  </path>
+
+  <path name="media-linein1">
+      <ctl name="ADC Dest Select" value="APB" />
+      <ctl name="LINEINL" value="LINEIN1" />
+      <ctl name="LINEINR" value="LINEIN1" />
+  </path>
+
+  <path name="media-linein2">
+      <ctl name="ADC Dest Select" value="APB" />
+      <ctl name="LINEINL" value="LINEIN2" />
+      <ctl name="LINEINR" value="LINEIN2" />
+  </path>
+
+  <path name="media-headphones">
+      <ctl name="DAC Src Select" value="I2S" />
+      <ctl name="Speaker" value="Off" />
+      <ctl name="Headphone" value="On" />
+  </path>
+
+  <path name="out-reset">
+      <ctl name="Speaker" value="Off" />
+      <ctl name="Headphone" value="Off" />
+  </path>
+  <path name="in-reset">
+      <ctl name="ADC Swap" value="Off" />
+      <ctl name="ADCL Input MIC1 Boost Switch" value="0" />
+      <ctl name="ADCR Input MIC2 Boost Switch" value="0" />
+  </path>
+  <path name="null">
+  </path>
+</mixer>

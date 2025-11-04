@@ -1,53 +1,58 @@
-# AI Context Files
+# AI Context Files - Navigation & Reference
 
-This directory contains context information to help AI agents complete tasks effectively.
+**Last Updated:** November 4, 2025  
+**Purpose:** Central reference for AI agents working on HY300 project  
+**Read This First:** Yes - critical for any new agent session
 
-## Project Philosophy: Hardware-First Approach
+---
 
-This project follows a **hardware-first development methodology**:
-- Live hardware analysis provides ground truth
-- Software research (in `../../research/`) provides context and patterns
-- Hardware validation drives all decisions
+## 🎯 QUICK START FOR AI AGENTS (Phase I Complete)
 
-**Key Principle:** Hardware Truth > Software Analysis
+### Essential Reading (In Order)
+1. **`01-PROJECT-STATUS.md`** ⭐ START HERE (10 min) - Current phase + blockers
+2. **`PROJECT_ROADMAP.md`** (20 min) - Full timeline context
+3. **Phase-specific README** (phase-dependent) - Current work details
+4. **`RECOVERY_TEMPLATE.md`** (20 min) - Safety procedures MANDATORY
 
-## Available Contexts
+**Total Time to Full Context:** ~50 minutes
 
-### Hardware-First Development (CRITICAL)
-- `research-integration.md` - **START HERE** - How to use research/ findings with live hardware
-- `live-system-analysis.md` - Safe data extraction procedures from running device
-- `hardware-safety.md` - Hardware safety protocols and A/B testing
-- `hardware.md` - HY300 hardware specifications and components
-- `hardware-testing-protocol.md` - FEL mode testing and recovery procedures
+---
 
-### Development Environment
-- `development-environment.md` - Development environment setup
-- `cross-compilation.md` - Cross-compilation setup and procedures
-- `firmware-analysis.md` - Stock firmware analysis procedures
+## 📁 CONTEXT FILES IN THIS DIRECTORY
 
-### Bootloader and Recovery
-- `uboot-integration.md` - U-Boot development and FEL testing standards
-- `sunxi-tools.md` - Sunxi tools usage and FEL mode
-- `h713-fel-reverse-engineering.md` - H713 FEL mode technical details
+### 01-PROJECT-STATUS.md ⭐ CRITICAL
+**What It Contains:**
+- Phase I completion status (9/9 tasks ✅)
+- Phase II readiness (CP2102 blocked)
+- Hardware specifications summary
+- Immediate next steps
+- Success metrics by phase
+- Handoff protocol
 
-### Driver Integration
-- `driver-integration-strategy.md` - Systematic driver integration methodology
-- `audio-display-integration.md` - Projector audio/display system integration
-- `android-calibration-integration.md` - Factory calibration data integration
+**When to Read:** Every session start (5-10 min refresh)  
+**Key Status:** Phase I 100% complete, Phase II blocked on hardware
 
-### VM Testing (Phase VIII Reference)
-- `phase8-vm-testing.md` - Phase VIII overview and objectives
-- `vm-testing-validation.md` - VM testing framework and procedures
-- `kodi-integration.md` - Kodi integration standards and procedures
-- `prometheus-metrics.md` - Metrics collection implementation
+### 02-HARDWARE-ARCHITECTURE.md (TODO)
+Hardware architecture details (SoC, boot chain, memory map)
 
-### Project Management
-- `current-status.md` - Current project status for delegated agents
-- `delegation-standards.md` - Agent delegation protocols
-- `documentation-standards.md` - Documentation requirements
-- `git-standards.md` - Git workflow and commit standards
+### 03-PHASE-DEPENDENCIES.md (TODO)
+Phase gating requirements + prerequisites
 
-## Research Archive Integration
+### 04-RECOVERY-PROCEDURES.md (TODO)
+Safety procedures and recovery references
+
+### 05-RESEARCH-INTEGRATION.md (TODO)
+How to use `research/` findings + RESEARCH_MAPPING
+
+### 06-TASK-MANAGEMENT.md (TODO)
+Task workflow + conventions
+
+### 07-SAFETY-PROTOCOLS.md (TODO)
+Hardware safety rules + ABSOLUTE constraints
+
+---
+
+## 📚 LEGACY CONTEXT FILES (Still Valid)
 
 The `../../research/` directory contains **100+ software analysis documents** from previous work. These provide valuable context but must be validated against live hardware.
 

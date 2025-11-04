@@ -1,0 +1,45 @@
+{
+	"tv_current_coutry":"cn",
+	"tv_country_support_list":[
+		"cn",
+		"us"
+	],
+	"tv_common_config": {
+		//add tv comon configs below
+		"tv_demod_interface":"VsFrontEnd",
+		"tv_atv_scan_check_strength":false,
+		"tv_atv_scan_check_signal":false,
+		"tv_atv_scan_check_decoder":true,
+		"tv_atv_check_decoder_wait_time":500, //ms
+		"tv_atv_check_decoder_counts":10,
+		"tv_atv_check_decoder_upper_limit":6,
+		"tv_atv_check_decoder_lower_limit":3,
+		"tv_atv_check_decoder_interval":50, //ms
+		"tv_atv_scan_strength_threshold":75,
+		"tv_atv_scan_signal_threshold":50
+	},
+	"tv_country_default_config": {
+		"cn":{
+			"tv_country_name":"China",
+			"tv_atv_support":true,
+			"tv_dtv_support":true,
+			"tv_atv_color_sys":"auto",
+			"tv_atv_sound_sys":"auto",
+			"tv_atv_min_freq": 44250000,
+			"tv_atv_max_freq": 868250000,
+			"tv_dtv_sys":"dtmb"
+		},
+
+		"us":{
+			"tv_country_name":"America",
+			"tv_atv_support":true,
+			"tv_dtv_support":true,
+			"tv_atv_color_sys":"ntsc",
+			"tv_atv_sound_sys":"m",
+			"tv_atv_min_freq": 55250000,
+			"tv_atv_max_freq": 801250000,
+			"tv_dtv_sys":"atsc",
+			"tv_tuner_standard_type":"air"//air/std/hrc/irc
+		}
+	}
+}
